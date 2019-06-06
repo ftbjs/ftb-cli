@@ -1,0 +1,26 @@
+{
+  "name": "ftb-cli",
+  "version": "0.0.0",
+  "description": "A tool for run vue project, react project. also support run single file of them.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ftb-family/ftb-cli.git"
+  },
+  "keywords": [
+    "vue-cli",
+    "react-cli",
+    "webpack",
+    "cli",
+    "reactjs"
+  ],
+  "author": "biyuqiwan@163.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ftb-family/ftb-cli/issues"
+  },
+  "homepage": "https://github.com/ftb-family/ftb-cli#readme"
+}
