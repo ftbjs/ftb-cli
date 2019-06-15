@@ -1,22 +1,8 @@
+const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-const getBabelLoaderOptions = (frame = 'react') => {
-  return frame === 'react'
-  ? ['@babel/preset-env', '@babel/preset-react']
-  : ['@babel/preset-env']
-}
-
-const getOutputParams = (env) => {
-  return env ? {
-    filename: 'js/[name].[chunkhash].js',
-    chunkFilename: 'js/[name].[id].[chunkhash].js'
-  } : {
-    filename: 'js/[name].js',
-  }
-}
-
-const isProd = process.env.NODE_ENV === 'production'
+const { getBabelLoaderOptions, getOutputParams, isProd } = require('./utils')
 
 const app = (api) => {
   const { entry, outputDir, publicPath, frame } = api
@@ -60,7 +46,9 @@ const app = (api) => {
       ]
     },
     plugins: [
-      new HtmlWebpackPlugin()
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, '../index.html')
+      })
     ]
   }
 }
