@@ -5,12 +5,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { getBabelLoaderOptions, getOutputParams, isProd } = require('./utils')
 
 const app = (api) => {
-  const { entry, outputDir, publicPath, frame } = api
+  const { entry, output, publicPath, frame } = api
 
   return {
     entry: entry,
     output: {
-      path: outputDir,
+      path: output,
       publicPath: publicPath,
       ...getOutputParams(isProd)
     },
