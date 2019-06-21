@@ -9,8 +9,13 @@ npm install
 npm link
 
 // dev
-ftb-cli dev react.demo.js
+ftb-cli dev [file]
+// e.g: ftb-cli dev react.demo.js
 
 // build
-ftb-cli build react.demo.js
+ftb-cli build [file]
+
+// init
+ftb-cli init [name]
+// name >> vue or react
 ```
