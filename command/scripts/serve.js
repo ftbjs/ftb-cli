@@ -3,7 +3,7 @@ const path = require('path')
 const webpack = require('webpack')
 const portfinder = require('portfinder')
 const WebpackDevServer = require('webpack-dev-server')
-const webpackDevConfig = require('../config/dev')
+const webpackDevConfig = require('../../config/dev')
 
 module.exports = async (api) => {
   const  { entry, output, publicPath, frame, port=8080 } = api

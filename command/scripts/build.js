@@ -1,5 +1,5 @@
 const webpack = require('webpack')
-const webpackBuildConfig = require('../config/prod')
+const webpackBuildConfig = require('../../config/prod')
 
 module.exports = (api) => {
   const  { entry, output, publicPath, frame } = api

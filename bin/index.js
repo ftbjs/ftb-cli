@@ -3,8 +3,8 @@
 const path = require('path')
 const program = require('commander')
 const chalk = require('chalk')
-const serve = require('../command/serve')
-const build = require('../command/build')
+const serve = require('../command/scripts/serve')
+const build = require('../command/scripts/build')
 const fileExist = require('../utils/fileExist')
 const log = require('../utils/log')
 
@@ -18,12 +18,11 @@ program
   .command('init [name]')
   .description('Support create a react or vue project')
   .action((name, other) => {
-    if (!name) {
-      log('red', 'Please input a framework name you want to create')
-      log('green', 'vue or react')
+    if (!['vue', 'react'].includes(name)) {
+      log('yellow', 'Please input a framework name you want to create');
       return
     }
-    require('../command/init')(name)
+    require('../command/cli/init')({ frameName: name })
   })
 
 program
