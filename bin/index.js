@@ -2,6 +2,7 @@
 
 const path = require('path')
 const program = require('commander')
+const chalk = require('chalk')
 const serve = require('../command/serve')
 const build = require('../command/build')
 const fileExist = require('../utils/fileExist')
@@ -10,28 +11,24 @@ const log = require('../utils/log')
 const matchEntryFile = /.*\.js$/
 
 program
-  .version('0.0.1', '-v, --version')
-  .option('-init, --debug', 'Support create a react or vue project')
-  .option('-dev, --debug', 'Support as command run a project')
-  .option('-build, --debug', 'Support as command build a project')
+  .version(require('../package').version, '-v, --version')
+  .usage(`${chalk.green('<command>')} [options]`)
 
 program
   .command('init [name]')
+  .description('Support create a react or vue project')
   .action((name, other) => {
-    switch(name) {
-      case 'react':
-        log('green', 'Please wait a moment, will support create react project in the feature')
-        break
-      case 'vue':
-        log('green', 'Please wait a moment, will support create vue project in the feature')
-        break
-      default:
-        log('yellow', 'Currently, init command only support create vue and react project')
+    if (!name) {
+      log('red', 'Please input a framework name you want to create')
+      log('green', 'vue or react')
+      return
     }
+    require('../command/init')(name)
   })
 
 program
   .command('dev [path] [Start a server use path, defalut: src/index.js]')
+  .description('Support as command run a project')
   .action((path, other) => {
     const entry = path ? path : 'src/index.js'    
 
@@ -57,6 +54,7 @@ program
 
 program
   .command('build [path] [Start a build use path, defalut: src/index.js]')
+  .description('Support as command build a project')
   .action((path, others) => {
     log('greenBright', 'Please wait a moment, let me try to finish this feature')
     // build(commandArg)
@@ -64,6 +62,7 @@ program
 
 program
   .command('*')
+  .description('A wrong operation. Please see above all command.')
   .action((name, others) => {
     log('greenBright', 'I guess you lost your goal, no warrries, try again')
   })
