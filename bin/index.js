@@ -28,8 +28,8 @@ program
 program
   .command('dev [path] [Start a server use path, defalut: src/index.js]')
   .description('Support as command run a project')
-  .action((path, other) => {
-    const entry = path ? path : 'src/index.js'    
+  .action((file, other) => {
+    const entry = file ? file : 'src/index.js'    
 
     if (!matchEntryFile.test(entry)) {
       log('yellowBright', 'Please input a valid entry file as webpack entry!')
