@@ -4,7 +4,7 @@ const download = require('download-git-repo')
 
 module.exports = ({ appName, frameName }) => {
   const cacheBase = '../../cache'
-  const cacheDir = `${cacheBase}/template-${frameName}`
+  const cacheDir = `${cacheBase}/template/${frameName}`
 
   return new Promise((resolve, reject) => {
     fs.ensureDirSync(appName)
