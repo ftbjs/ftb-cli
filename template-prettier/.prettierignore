@@ -1,0 +1,6 @@
+.eslintignore
+.prettierignore
+.prettierrc.js
+.eslintrc.js
+/node_modules/
+/dist/
