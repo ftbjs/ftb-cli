@@ -1,7 +1,7 @@
 const ora = require('ora')
 
 // tasks
-const checkVersion = require('./checkVersion')
+const checkUpdate = require('./checkUpdate')
 const appConfig = require('./appConfig')
 const createProject = require('./createProject')
 const packageJson = require('./packageJson')
@@ -17,7 +17,7 @@ const generateApplaction = ({ frameName }) => {
   options.frameName = frameName
 
   const session = async () => {
-    await checkVersion(options)
+    await checkUpdate(options)
     await appConfig(options)
     spinner.start()
     await createProject(options)
