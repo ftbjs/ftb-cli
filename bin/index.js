@@ -22,7 +22,7 @@ program
       log('yellow', 'Please input a framework name you want to create');
       return
     }
-    require('../command/cli/init')({ frameName: name })
+    require('../command/cli/runTask')({ frameName: name })
   })
 
 program

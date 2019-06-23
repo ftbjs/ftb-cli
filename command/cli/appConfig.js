@@ -37,6 +37,24 @@ module.exports = (options) => {
       },
       {
         type: 'list',
+        name: 'eslint',
+        message: 'Do you want to add eslint to format your code?',
+        choices: [
+          'Yes',
+          'No'
+        ]
+      },
+      {
+        type: 'list',
+        name: 'prettier',
+        message: 'Do you want to add prettier to beautify your code?',
+        choices: [
+          'Yes',
+          'No'
+        ]
+      },
+      {
+        type: 'list',
         name: 'NpmOrYarn',
         message: 'Please select a package management tool',
         choices: [
@@ -48,6 +66,8 @@ module.exports = (options) => {
     .then(answer => {
       options.appName = answer.appName
       options.cssType = answer.cssType
+      options.eslint = answer.eslint
+      options.prettir = answer.prettir
       options.NpmOrYarn = answer.NpmOrYarn
       resolve()
     })
