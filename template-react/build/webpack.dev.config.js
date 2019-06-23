@@ -3,9 +3,9 @@ const portfinder = require('portfinder')
 const chalk = require('chalk')
 const merge = require('webpack-merge')
 const webpack = require('webpack')
-const baseWebpackConfig = require('./base.config')
+const webpackBaseConfig = require('./webpack.base.config')
 
-const webpackDevConfig = merge(baseWebpackConfig, {
+const webpackDevConfig = merge(webpackBaseConfig, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {

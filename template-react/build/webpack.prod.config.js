@@ -3,7 +3,7 @@ const webpackMerge = require('webpack-merge')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const webpackBaseConfig = require('./base.config')
+const webpackBaseConfig = require('./webpack.base.config')
 
 module.exports = webpackMerge(webpackBaseConfig, {
   mode: 'production',
