@@ -1,4 +1,7 @@
-## ftb-cli
+# Welcome to ftb-cli
+Not released yet! ☹️
+
+## Experience in local
 
 Test cli in local:
 ```js
