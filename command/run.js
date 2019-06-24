@@ -9,7 +9,7 @@ const eslint = require('./eslint')
 const prettier = require('./prettier')
 const webpack = require('./webpack')
 
-const spinner = ora('Please wait while downloading...')
+const spinner = ora('Please wait while initialize the application...')
 
 const generateApplaction = ({ frameName }) => {
   const options = {}
