@@ -1,9 +1,9 @@
 const fs = require('fs-extra')
 const chalk = require('chalk')
 const inquirer = require('inquirer')
-const { spawn } = require('child_process')
+const shelljs = require('shelljs')
 
-module.exports = (options) => {
+const app = (options) => {
   return new Promise((resolve, reject) => {
     inquirer
     .prompt([
@@ -16,10 +16,10 @@ module.exports = (options) => {
           const getForceCreate = appname[1]
           if (fs.existsSync(`./${getAppName}`)) {
             if (getForceCreate && getForceCreate == '-f') {
-              spawn(`rm -rf ./${getAppName}`, [], { cwd: `./`, shell: true })
+              shelljs.rm('-rf', `./${getAppName}`)
               return true
             } else {
-              return `当前文件夹下含有您要创建 ${getAppName} 的应用名称文件,是否强制删除文件 继续初始化? 请输入 ${chalk.green(getAppName + ' -f')}`
+              return `Directory is exists, if you want to delete it, you can input: ${chalk.green(getAppName + ' -f')}`
             }
           } else {
             return true
@@ -29,7 +29,7 @@ module.exports = (options) => {
       {
         type: 'list',
         name: 'cssType',
-        message: 'Please select a css preprocessor',
+        message: 'Please select a css preprocessor:',
         choices: [
           'scss',
           'less'
@@ -56,15 +56,16 @@ module.exports = (options) => {
       {
         type: 'list',
         name: 'NpmOrYarn',
-        message: 'Please select a package management tool',
+        message: 'Please select a package management tool:',
         choices: [
-          'NPM',
-          'YARN'
+          'Npm',
+          'Yarn'
         ]
       }
     ])
     .then(answer => {
-      options.appName = answer.appName
+      // ignore space
+      options.appName = answer.appName.split(/\s/)[0]
       options.cssType = answer.cssType
       options.eslint = answer.eslint
       options.prettir = answer.prettir
@@ -73,3 +74,5 @@ module.exports = (options) => {
     })
   })
 }
+
+module.exports = app
