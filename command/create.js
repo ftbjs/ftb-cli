@@ -7,7 +7,7 @@ const { versionLog } = require('./utils/compareVersion')
 module.exports = options => {
   const { appName, frameName } = options
   const cacheBase = '../../cache'
-  const cacheDir = `${cacheBase}/template/${frameName}`
+  const cacheDir = `${cacheBase}/templates/${frameName}`
 
   return versionOnline(options)
     .then(value => new Promise((resolve, reject) => {
