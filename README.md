@@ -12,6 +12,6 @@ npm install
 npm link
 
 // init
-ftb-cli init [name]
+ftb init [name]
 // name >> vue or react
 ```
