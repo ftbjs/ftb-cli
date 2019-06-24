@@ -22,14 +22,14 @@ program
       log('yellow', 'Please input a framework name you want to create');
       return
     }
-    require('../command/cli/runTask')({ frameName: name })
+    require('../command/cli/run')({ frameName: name })
   })
 
 program
   .command('dev [path] [Start a server use path, defalut: src/index.js]')
   .description('Support as command run a project')
   .action((file, other) => {
-    const entry = file ? file : 'src/index.js'    
+    const entry = file ? file : 'src/index.js'
 
     if (!matchEntryFile.test(entry)) {
       log('yellowBright', 'Please input a valid entry file as webpack entry!')

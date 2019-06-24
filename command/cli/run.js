@@ -1,10 +1,10 @@
 const ora = require('ora')
 
 // tasks
-const checkUpdate = require('./checkUpdate')
-const appConfig = require('./appConfig')
-const createProject = require('./createProject')
-const packageJson = require('./packageJson')
+const update = require('./update')
+const app = require('./app')
+const create = require('./create')
+const package = require('./package')
 const eslint = require('./eslint')
 const prettier = require('./prettier')
 const webpack = require('./webpack')
@@ -17,13 +17,13 @@ const generateApplaction = ({ frameName }) => {
   options.frameName = frameName
 
   const session = async () => {
-    await checkUpdate(options)
-    await appConfig(options)
+    await update(options)
+    await app(options)
     spinner.start()
-    await createProject(options)
+    await create(options)
     await eslint(options)
     await prettier(options)
-    await packageJson(options)
+    await package(options)
     await webpack(options)
     spinner.succeed()
   }
