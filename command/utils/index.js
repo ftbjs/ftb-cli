@@ -1,6 +1,7 @@
 const path = require('path')
 const fs = require('fs')
 const axios = require('axios')
+const handlebars = require('handlebars')
 const downloadRepo = require('download-git-repo')
 
 const GITHUB_REACT_URL = 'https://raw.githubusercontent.com/ftb-family/ftb-cli/master/templates/react/package.json'
@@ -38,6 +39,9 @@ const getLocalFilePath = (type) => {
   return path.resolve(__dirname, `../cache/templates/${type}/package.json`)
 }
 
+/**
+ * @param {String} frameName
+ */
 const compareVersion = async ({ frameName }) => {
   const isExists = fs.existsSync(getLocalFilePath(frameName))
   if (isExists) {
@@ -48,8 +52,22 @@ const compareVersion = async ({ frameName }) => {
   return false
 }
 
+/**
+ * render handlebars
+ * @param {String} template 
+ * @param {String} file 
+ * @param {Optional} options 
+ */
+const renderTemplate = (template, file, options) => {
+  if (fs.existsSync(template)) {
+    const templateContent = fs.readFileSync(template).toString()
+    const result = handlebars.compile(templateContent)(options)
+    fs.writeFileSync(file, result)
+  }
+}
 
 module.exports = {
   downloadLatestRepo,
-  compareVersion
+  compareVersion,
+  renderTemplate
 }
