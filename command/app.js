@@ -52,15 +52,6 @@ const app = (options) => {
           'Yes',
           'No'
         ]
-      },
-      {
-        type: 'list',
-        name: 'NpmOrYarn',
-        message: 'Please select a package management tool:',
-        choices: [
-          'Npm',
-          'Yarn'
-        ]
       }
     ])
     .then(answer => {
@@ -68,8 +59,7 @@ const app = (options) => {
       options.appName = answer.appName.split(/\s/)[0]
       options.cssType = answer.cssType
       options.eslint = answer.eslint
-      options.prettir = answer.prettir
-      options.NpmOrYarn = answer.NpmOrYarn
+      options.prettier = answer.prettier
       resolve()
     })
   })
