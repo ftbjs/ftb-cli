@@ -1,10 +1,15 @@
 import React from 'react'
 import ReactDom from 'react-dom'
+import Logo from '../assets/logo.png'
+import './index.scss'
 
-const FtbDemo = () => {
+const FtbReact = () => {
   return (
-    <div>Ftb React Demo</div>
+    <div className="ftb-cli-react">
+      <img src={Logo} alt="Ftb logo"/>
+      <div>Ftb React Demo</div>
+    </div>
   )
 }
 
-ReactDom.render(<FtbDemo />, document.getElementById('app'))
+ReactDom.render(<FtbReact />, document.getElementById('app'))
