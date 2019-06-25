@@ -49,7 +49,7 @@ const app = (options) => {
         name: 'prettier',
         message: 'Do you want to add prettier to beautify your code?',
         choices: [
-          'Yes',
+          'Yes',  
           'No'
         ]
       }
@@ -57,9 +57,10 @@ const app = (options) => {
     .then(answer => {
       // ignore space
       options.appName = answer.appName.split(/\s/)[0]
-      options.cssType = answer.cssType
-      options.eslint = answer.eslint
-      options.prettier = answer.prettier
+      options.scss = answer.cssType === 'scss'
+      options.less = answer.cssType === 'less'
+      options.eslint = answer.eslint === 'Yes'
+      options.prettier = answer.prettier === 'Yes'
       resolve()
     })
   })
