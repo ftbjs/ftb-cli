@@ -22,7 +22,7 @@ const webpackOutConfig = (env) => {
     filename: 'js/[name].js',
   }
 }
-{{#if eslint="true"}}
+{{#if eslint}}
 /**
  * set eslint
  */
@@ -36,14 +36,12 @@ const webpackEslintConfig = () => ({
   }
 })
 {{/if}}
+
 module.exports = {
   isProd,
   resolve,
-  {{#if eslint="false"}}
+  {{#if eslint}}
+  webpackEslintConfig,
+  {{/if}}
   webpackOutConfig
-  {{/if}}
-  {{#if eslint="true"}}
-  webpackOutConfig,
-  webpackEslintConfig
-  {{/if}}
 }

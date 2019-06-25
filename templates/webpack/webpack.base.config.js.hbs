@@ -2,17 +2,12 @@ const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {
-  {{#if eslint="true"}}
   isProd,
   resolve,
-  webpackOutConfig,
-  webpackEslintConfig
+  {{#if eslint}}
+  webpackEslintConfig,
   {{/if}}
-  {{#if eslint="false"}}
-  isProd,
-  resolve,
-  webpackOutConfig,
-  {{/if}}
+  webpackOutConfig
 } = require('./utils')
 
 const app = { 
@@ -24,7 +19,7 @@ const app = {
   },
   module: {
     rules: [
-      {{#if eslint="true"}}
+      {{#if eslint}}
       webpackEslintConfig(),
       {{/if}}
       {
@@ -38,10 +33,10 @@ const app = {
         }
       },
       {
-        {{#if cssType="scss"}}
+        {{#if scss}}
         test: /\.(sa|sc|c)ss$/,
         {{/if}}
-        {{#if cssType="less"}}
+        {{#if less}}
         test: /\.(le|c)ss$/,
         {{/if}}
         use: [
@@ -51,12 +46,12 @@ const app = {
           {
             loader: 'css-loader'
           },
-          {{#if cssType="scss"}}
+          {{#if scss}}
           {
             loader: 'sass-loader'
           },
           {{/if}}
-          {{#if cssType="less"}}
+          {{#if less}}
           {
             loader: 'less-loader'
           },
