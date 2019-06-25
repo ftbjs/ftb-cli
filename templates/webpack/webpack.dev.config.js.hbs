@@ -28,7 +28,7 @@ module.exports = async () => {
   portfinder.basePort = oldPort
 
   portfinder.getPort({host:'127.0.0.1'} , (err, port) => {
-    if (!err){
+    if (err){
       console.log(chalk.red(`No port can used. Please check your machine`))
       return
     }

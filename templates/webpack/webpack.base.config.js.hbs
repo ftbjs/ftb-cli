@@ -1,27 +1,32 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const {
+  {{#if eslint="true"}}
+  isProd,
+  resolve,
+  webpackOutConfig,
+  webpackEslintConfig
+  {{/if}}
+  {{#if eslint="false"}}
+  isProd,
+  resolve,
+  webpackOutConfig,
+  {{/if}}
+} = require('./utils')
 
-/******Custom function**********/
-const isProd = process.env.NODE_ENV === 'production'
-const getOutputParams = (env) => {
-  return env ? {
-    filename: 'js/[name].[chunkhash].js',
-    chunkFilename: 'js/[name].[id].[chunkhash].js'
-  } : {
-    filename: 'js/[name].js',
-  }
-}
-/******Custom function**********/
-const app = {
-  entry: path.resolve(__dirname, '../src/index.js'),
+const app = { 
+  entry: resolve('../src/index.js'),
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: resolve('../dist'),
     publicPath: '/',
-    ...getOutputParams(isProd)
+    ...webpackOutConfig(isProd)
   },
   module: {
     rules: [
+      {{#if eslint="true"}}
+      webpackEslintConfig(),
+      {{/if}}
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
@@ -33,7 +38,12 @@ const app = {
         }
       },
       {
+        {{#if cssType="scss"}}
         test: /\.(sa|sc|c)ss$/,
+        {{/if}}
+        {{#if cssType="less"}}
+        test: /\.(le|c)ss$/,
+        {{/if}}
         use: [
           {
             loader: !isProd ? 'style-loader' : MiniCssExtractPlugin.loader
@@ -41,13 +51,44 @@ const app = {
           {
             loader: 'css-loader'
           },
+          {{#if cssType="scss"}}
           {
             loader: 'sass-loader'
           },
+          {{/if}}
+          {{#if cssType="less"}}
+          {
+            loader: 'less-loader'
+          },
+          {{/if}}
           {
             loader: 'postcss-loader'
           }
         ]
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'img/[name].[hash:7].[ext]'
+        }
+      },
+      {
+        test: /\.(mp4|webm|ogg|mp3|wav|flac|aac)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'media/[name].[hash:7].[ext]'
+        }
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'fonts/[name].[hash:7].[ext]'
+        }
       }
     ]
   },
