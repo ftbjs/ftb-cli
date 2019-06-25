@@ -1,27 +1,23 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const {
+  isProd,
+  resolve,
+  webpackOutConfig,
+  webpackEslintConfig
+} = require('./utils')
 
-/******Custom function**********/
-const isProd = process.env.NODE_ENV === 'production'
-const getOutputParams = (env) => {
-  return env ? {
-    filename: 'js/[name].[chunkhash].js',
-    chunkFilename: 'js/[name].[id].[chunkhash].js'
-  } : {
-    filename: 'js/[name].js',
-  }
-}
-/******Custom function**********/
-const app = {
-  entry: path.resolve(__dirname, '../src/index.js'),
+const app = { 
+  entry: resolve('../src/index.js'),
   output: {
-    path: path.resolve(__dirname, '../dist'),
+    path: resolve('../dist'),
     publicPath: '/',
-    ...getOutputParams(isProd)
+    ...webpackOutConfig(isProd)
   },
   module: {
     rules: [
+      webpackEslintConfig(),
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
