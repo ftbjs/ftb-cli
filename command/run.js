@@ -39,7 +39,7 @@ const generateApplaction = ({ frameName }) => {
     await packageJson(options)
 
     // create webpack config according user config
-    await webpackConfig(options)
+    webpackConfig(options)
     spinner.succeed()
   }
 
