@@ -5,6 +5,7 @@ const update = require('./update')
 const app = require('./app')
 const create = require('./create')
 const packageJson = require('./package')
+const jest = require('./jest')
 const eslint = require('./eslint')
 const prettier = require('./prettier')
 const webpackConfig = require('./webpack')
@@ -28,6 +29,9 @@ const generateApplaction = ({ frameName }) => {
 
     // create project according user config
     await create(options)
+
+    // create unit test according user config
+    await jest(options)
 
     // create eslint according user config
     await eslint(options)

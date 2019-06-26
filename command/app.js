@@ -9,7 +9,7 @@ const app = (options) => {
     .prompt([
       {
         name: 'appName',
-        message: 'Please input the project name:',
+        message: 'Please input the application name:',
         validate: (appname) => {
           appname = appname.split(/\s/)
           const getAppName = appname[0]
@@ -37,6 +37,15 @@ const app = (options) => {
       },
       {
         type: 'list',
+        name: 'jest',
+        message: 'Do you want to add jest to test your code?',
+        choices: [
+          'Yes',
+          'No'
+        ]
+      },
+      {
+        type: 'list',
         name: 'eslint',
         message: 'Do you want to add eslint to format your code?',
         choices: [
@@ -59,6 +68,7 @@ const app = (options) => {
       options.appName = answer.appName.split(/\s/)[0]
       options.scss = answer.cssType === 'scss'
       options.less = answer.cssType === 'less'
+      options.jest = answer.jest === 'Yes'
       options.eslint = answer.eslint === 'Yes'
       options.prettier = answer.prettier === 'Yes'
       resolve()
