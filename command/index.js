@@ -1,4 +1,5 @@
 const ora = require('ora')
+const chalk = require('chalk')
 
 // tasks
 const update = require('./update')
@@ -7,17 +8,27 @@ const create = require('./create')
 const packageJson = require('./package')
 const jest = require('./jest')
 const eslint = require('./eslint')
-const prettier = require('./prettier')
 const webpackConfig = require('./webpack')
 
-const spinner = ora('Please wait while initialize the application...')
+const spinner = ora('Please wait while creating the application...')
 
 const generateApplaction = ({ frameName }) => {
   const options = {}
   // vue or react pass by init
   options.frameName = frameName
 
-  const session = async () => {
+  if (!['vue', 'react'].includes(frameName)) { 
+    console.log(chalk.yellow('Only support create vue and react project.'))
+    return
+  }
+
+  if (frameName === 'vue') {
+    console.log(chalk.yellow('Only support react project now, Please wait later.'))
+    console.log(`You can create react project now: ${chalk.greenBright('ftb init react')}`)
+    return
+  }
+
+  const task = async () => {
     // check remote new version
     await update(options)
 
@@ -33,11 +44,8 @@ const generateApplaction = ({ frameName }) => {
     // create unit test according user config
     await jest(options)
 
-    // create eslint according user config
+    // create eslint and prettier according user config
     await eslint(options)
-
-    // create prettier file according user config
-    await prettier(options)
 
     // create package.json according user config
     await packageJson(options)
@@ -47,7 +55,7 @@ const generateApplaction = ({ frameName }) => {
     spinner.succeed()
   }
 
-  session()
+  task()
 }
 
 module.exports = generateApplaction

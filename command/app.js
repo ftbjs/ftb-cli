@@ -47,18 +47,9 @@ const app = (options) => {
       {
         type: 'list',
         name: 'eslint',
-        message: 'Do you want to add eslint to format your code?',
+        message: 'Do you want to add eslint and prettier to format your code?',
         choices: [
           'Yes',
-          'No'
-        ]
-      },
-      {
-        type: 'list',
-        name: 'prettier',
-        message: 'Do you want to add prettier to beautify your code?',
-        choices: [
-          'Yes',  
           'No'
         ]
       }
@@ -70,7 +61,6 @@ const app = (options) => {
       options.less = answer.cssType === 'less'
       options.jest = answer.jest === 'Yes'
       options.eslint = answer.eslint === 'Yes'
-      options.prettier = answer.prettier === 'Yes'
       resolve()
     })
   })

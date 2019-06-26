@@ -44,7 +44,7 @@ module.exports = webpackMerge(webpackBaseConfig, {
     new webpack.HashedModuleIdsPlugin(),
 
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+      filename: 'css/[name].css'
     })
   ]
 })
