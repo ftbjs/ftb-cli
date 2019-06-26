@@ -4,6 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    {{#if eslint}}
+    "fix": "eslint --fix 'src/**/*.js' 'build/**/*.js'",
+    {{/if}}
+    {{#if prettier}}
+    "prettier": "prettier --write 'src/**/*.js'",
+    {{/if}}
     "dev": "webpack-dev-server --config build/webpack.dev.config",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.config"
   },
