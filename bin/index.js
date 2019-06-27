@@ -18,7 +18,7 @@ program
 program
   .command('*')
   .description('A wrong operation, Please see above all command.')
-  .action((name, others) => {
+  .action((name, other) => {
     console.log(chalk.greenBright('I guess you lost your goal, no warrries, try again'))
   })
 

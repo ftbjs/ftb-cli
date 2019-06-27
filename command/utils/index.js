@@ -66,6 +66,12 @@ const renderTemplate = (template, file, options) => {
   }
 }
 
+/**
+ * renderRule 替换规则
+ * fileLists 文件模板位置
+ * options 数据
+ * @param {*} param
+ */
 const writeTemplateToProject = ({ renderRule, fileLists, options }) => {
   return new Promise((resolve, reject) => {
     if (!fileLists) {
