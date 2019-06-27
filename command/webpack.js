@@ -1,8 +1,6 @@
-const path = require('path')
-const { renderTemplate } = require('./utils/index')
+const { writeTemplateToProject } = require('./utils/index')
 
 const webpackConfig = (options) => {
-  const { appName } = options
   const fileLists = [
     'templates/build/utils.js.hbs',
     'templates/build/webpack.base.config.js.hbs',
@@ -11,12 +9,15 @@ const webpackConfig = (options) => {
   ]
   
   return new Promise((resolve, reject) => {
-    for (let i = 0; i < fileLists.length; i++) {
-      const packageTpl = path.resolve(__dirname, `../${fileLists[i]}`)
-      const createTpl = fileLists[i].replace(/(templates\/)/, '').replace(/\.hbs$/, '')
-      renderTemplate(packageTpl, `${process.cwd()}/${appName}/${createTpl}`, options)
-    }
-    resolve()
+    writeTemplateToProject({
+      renderRule: '^templates\/',
+      fileLists,
+      options
+    }).then(() => {
+      resolve()
+    }).catch((e) => {
+      reject(e)
+    })
   })
 }
 

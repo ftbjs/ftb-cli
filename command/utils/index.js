@@ -66,8 +66,25 @@ const renderTemplate = (template, file, options) => {
   }
 }
 
+const writeTemplateToProject = ({ renderRule, fileLists, options }) => {
+  return new Promise((resolve, reject) => {
+    if (!fileLists) {
+      reject(false)
+    }
+    for (let i = 0; i < fileLists.length; i++) {
+      const file = fileLists[i]
+      const rule = new RegExp(renderRule)
+      const packageTpl = path.resolve(__dirname, `../../${file}`)
+      const writeToFilePath = file.replace(rule, '').replace(/\.hbs$/, '')
+      renderTemplate(packageTpl, `${process.cwd()}/${options.appName}/${writeToFilePath}`, options)
+    }
+    resolve()
+  })
+}
+
 module.exports = {
   downloadLatestRepo,
   compareVersion,
-  renderTemplate
+  renderTemplate,
+  writeTemplateToProject
 }

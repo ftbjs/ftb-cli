@@ -1,12 +1,21 @@
-const path = require('path')
-const { renderTemplate } = require('./utils/index')
+const { writeTemplateToProject } = require('./utils/index')
 
 const packageJson = (options) => {
-  const { appName, frameName } = options
+  const { frameName } = options
+  const fileLists = [
+    `templates/package/${frameName}.package.json.hbs`
+  ]
+
   return new Promise((resolve, reject) => {
-    const packageTpl = path.resolve(__dirname, `../templates/package/${frameName}.package.json.hbs`)
-    renderTemplate(packageTpl, `${process.cwd()}/${appName}/package.json`, options)
-    resolve()
+    writeTemplateToProject({
+      renderRule: `^templates\/package\/${frameName}\.`,
+      fileLists,
+      options
+    }).then(() => {
+      resolve()
+    }).catch((e) => {
+      reject(e)
+    })
   })
 }
 

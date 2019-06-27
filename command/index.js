@@ -42,16 +42,16 @@ const generateApplaction = ({ frameName }) => {
     await create(options)
 
     // create unit test according user config
-    await jest(options)
+    options.jest && await jest(options)
 
     // create eslint and prettier according user config
-    await eslint(options)
+    options.eslint && await eslint(options)
 
     // create package.json according user config
     await packageJson(options)
 
     // create webpack config according user config
-    webpackConfig(options)
+    await webpackConfig(options)
     spinner.succeed()
   }
 
