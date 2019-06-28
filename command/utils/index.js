@@ -8,6 +8,8 @@ const isOnline = require('is-online')
 const GITHUB_REACT_URL = 'https://raw.githubusercontent.com/ftb-family/ftb-cli/master/templates/react/package.json'
 const GITHUB_VUE_URL = 'https://raw.githubusercontent.com/ftb-family/ftb-cli/master/templates/vue/package.json'
 
+const resolveApp = source => path.resolve(__dirname, source)
+
 /**
  * Download repo to cache
  * @param {String} gitRepo 
@@ -39,7 +41,7 @@ const getRemoteVersion = (frameName) => {
   return new Promise((resolve, reject) => {
     axios.get(requestUrl).then(response => {
       resolve(response.data.version)
-    }).catch(e => reject(e))
+    }).catch(e => resolve(false))
   })
 }
 
@@ -48,7 +50,7 @@ const getRemoteVersion = (frameName) => {
  * @param {String} type 
  */
 const getLocalFilePath = (type) => {
-  return path.resolve(__dirname, `../cache/templates/${type}/package.json`)
+  return resolveApp(`../cache/templates/${type}/package.json`)
 }
 
 /**
@@ -92,7 +94,7 @@ const writeTemplateToProject = ({ renderRule, fileLists, options }) => {
     for (let i = 0; i < fileLists.length; i++) {
       const file = fileLists[i]
       const rule = new RegExp(renderRule)
-      const packageTpl = path.resolve(__dirname, `../../${file}`)
+      const packageTpl = resolveApp(`../../${file}`)
       const writeToFilePath = file.replace(rule, '').replace(/\.hbs$/, '')
       renderTemplate(packageTpl, `${process.cwd()}/${options.appName}/${writeToFilePath}`, options)
     }
@@ -104,5 +106,6 @@ module.exports = {
   downloadLatestRepo,
   compareVersion,
   renderTemplate,
-  writeTemplateToProject
+  writeTemplateToProject,
+  resolveApp
 }

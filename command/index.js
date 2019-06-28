@@ -9,6 +9,7 @@ const packageJson = require('./package')
 const jest = require('./jest')
 const eslint = require('./eslint')
 const webpackConfig = require('./webpack')
+const help = require('./help')
 
 const spinner = ora('Please wait while creating the application...')
 
@@ -52,7 +53,12 @@ const generateApplaction = ({ frameName }) => {
 
     // create webpack config according user config
     await webpackConfig(options)
+
     spinner.succeed()
+
+    await help(options)
+
+    spinner.stop()
   }
 
   task()

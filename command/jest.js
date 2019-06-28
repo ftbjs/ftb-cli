@@ -1,10 +1,9 @@
-const path = require('path')
 const fs = require('fs-extra')
-const { writeTemplateToProject } = require('./utils/index')
+const { writeTemplateToProject, resolveApp } = require('./utils/index')
 
 const jest = (options) => {
   const { appName } = options
-  const jestTestFolder = path.resolve(__dirname, '../templates/jest/__test__')
+  const jestTestFolder = resolveApp('../../templates/jest/__test__')
 
   const fileLists = [
     'templates/jest/enzyme.setup.js.hbs',
