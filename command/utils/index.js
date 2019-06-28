@@ -3,15 +3,27 @@ const fs = require('fs')
 const axios = require('axios')
 const handlebars = require('handlebars')
 const downloadRepo = require('download-git-repo')
+const isOnline = require('is-online')
 
 const GITHUB_REACT_URL = 'https://raw.githubusercontent.com/ftb-family/ftb-cli/master/templates/react/package.json'
 const GITHUB_VUE_URL = 'https://raw.githubusercontent.com/ftb-family/ftb-cli/master/templates/vue/package.json'
 
-const downloadLatestRepo = (gitRepo, cachePath) => {
+/**
+ * Download repo to cache
+ * @param {String} gitRepo 
+ * @param {String} cachePath 
+ */
+const downloadLatestRepo = async (gitRepo, cachePath) => {
+  const online = await isOnline()
   return new Promise((resolve, reject) => {
+    // if offline, use cli templates
+    if (!online) {
+      resolve(false)
+      return
+    }
     downloadRepo(gitRepo, cachePath, (err) => {
       if (err) {
-        reject(false)
+        resolve(false)
       }
       resolve(true)
     })

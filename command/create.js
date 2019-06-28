@@ -8,7 +8,7 @@ const create = async (options) => {
   const isUpdate = await compareVersion(options)
   const cacheBase = '../cache'
   const cacheTemplateDir = path.resolve(__dirname, `${cacheBase}/templates/${frameName}`)
-  const currentTemplateDir = path.resolve(__dirname, `templates/${frameName}`)
+  const currentTemplateDir = path.resolve(__dirname, `../templates/${frameName}`)
 
   let downStatus
   if (!isUpdate) {
