@@ -4,7 +4,7 @@
   "description": "A tool for run vue project, react project. also support run single file of them.",
   "main": "index.js",
   "bin": {
-    "ftb": "./bin/index.js"
+    "ftb": "bin/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -29,10 +29,6 @@
   },
   "homepage": "https://github.com/ftb-family/ftb-cli#readme",
   "dependencies": {
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5",
-    "@babel/register": "^7.4.4",
-    "autoprefixer": "^9.6.0",
     "axios": "^0.19.0",
     "chalk": "^2.4.2",
     "commander": "^2.20.0",
