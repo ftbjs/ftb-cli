@@ -107,6 +107,5 @@ module.exports = {
   compareVersion,
   renderTemplate,
   writeTemplateToProject,
-  render,
   resolveApp
 }

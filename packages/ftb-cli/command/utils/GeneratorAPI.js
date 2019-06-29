@@ -1,3 +1,4 @@
+const fs = require('fs-extra')
 const { renderTemplate } = require('./index')
 
 /**
@@ -13,12 +14,21 @@ const render = ({ fileLists, api, filePath }) => {
     }
     for (let i = 0; i < fileLists.length; i++) {
       const file = fileLists[i]
-      renderTemplate(file, `${process.cwd()}/${api.appName}/${filePath}`, api)
+      const filePathReal = typeof filePath === 'string' ? filePath : filePath[i]
+      renderTemplate(file, `${process.cwd()}/${api.appName}/${filePathReal}`, api)
     }
     resolve()
   })
 }
 
+const copy = ({ source, target, api }) => {
+  return new Promise((resolve, reject) => {
+    fs.copySync(source, `${process.cwd()}/${api.appName}/${target}`)
+    resolve()
+  })
+}
+
 module.exports = {
-  render
+  render,
+  copy
 }

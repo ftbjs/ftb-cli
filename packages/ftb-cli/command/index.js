@@ -1,24 +1,27 @@
 const ora = require('ora')
 const chalk = require('chalk')
 
+// ftb cli plugin
+const renderPackageJson = require('ftb-cli-plugin-package')
+const renderJest = require('ftb-cli-plugin-jest')
+
 // tasks
 const update = require('./update')
 const app = require('./app')
 const create = require('./create')
-const renderPackageJson = require('ftb-cli-plugin-package')
-const jest = require('./jest')
 const eslint = require('./eslint')
 const webpackConfig = require('./webpack')
 const help = require('./help')
 
 // combine to api
-const { render } = require('./utils/GeneratorAPI')
+const { render, copy } = require('./utils/GeneratorAPI')
 
 const spinner = ora('Please wait while creating the application...')
 
 const generateApplaction = ({ frameName }) => {
   const api = {}
   api.render = render
+  api.copy = copy
   // vue or react pass by init
   api.frameName = frameName
 
@@ -47,7 +50,7 @@ const generateApplaction = ({ frameName }) => {
     await create(api)
 
     // create unit test according user config
-    api.jest && await jest(api)
+    api.jest && await renderJest(api)
 
     // create eslint and prettier according user config
     api.eslint && await eslint(api)
