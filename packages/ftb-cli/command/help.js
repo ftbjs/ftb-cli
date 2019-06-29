@@ -18,12 +18,16 @@ module.exports = async (api) => {
       ${outPutCliLog.dev}
 
       ${outPutCliLog.build}
-
-      ${jest && outPutCliLog.test}
-
-      ${eslint && outPutCliLog.eslint}
-
-      ${eslint && outPutCliLog.prettier}
     `
   )
+  if (jest) {
+    console.log(`      ${outPutCliLog.test}`)
+  }
+  if (eslint) {
+    console.log(`
+      ${outPutCliLog.eslint}
+
+      ${outPutCliLog.prettier}
+    `)
+  }
 }
