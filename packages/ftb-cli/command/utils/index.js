@@ -1,7 +1,6 @@
 const path = require('path')
 const fs = require('fs')
 const axios = require('axios')
-const handlebars = require('handlebars')
 const downloadRepo = require('download-git-repo')
 const isOnline = require('is-online')
 
@@ -66,46 +65,8 @@ const compareVersion = async ({ frameName }) => {
   return false
 }
 
-/**
- * render handlebars
- * @param {String} template 
- * @param {String} file 
- * @param {Optional} api 
- */
-const renderTemplate = (template, file, api) => {
-  if (fs.existsSync(template)) {
-    const templateContent = fs.readFileSync(template).toString()
-    const result = handlebars.compile(templateContent)(api)
-    fs.writeFileSync(file, result)
-  }
-}
-
-/**
- * renderRule 替换规则
- * fileLists 文件模板位置
- * api 数据
- * @param {*} param
- */
-const writeTemplateToProject = ({ renderRule, fileLists, api }) => {
-  return new Promise((resolve, reject) => {
-    if (!fileLists) {
-      reject(false)
-    }
-    for (let i = 0; i < fileLists.length; i++) {
-      const file = fileLists[i]
-      const rule = new RegExp(renderRule)
-      const packageTpl = resolveApp(`../../${file}`)
-      const writeToFilePath = file.replace(rule, '').replace(/\.hbs$/, '')
-      renderTemplate(packageTpl, `${process.cwd()}/${api.appName}/${writeToFilePath}`, api)
-    }
-    resolve()
-  })
-}
-
 module.exports = {
   downloadLatestRepo,
   compareVersion,
-  renderTemplate,
-  writeTemplateToProject,
   resolveApp
 }

@@ -1,5 +1,5 @@
 const fs = require('fs-extra')
-const { renderTemplate } = require('./index')
+const renderTemplate = require('./renderTemplate')
 
 /**
  * @author BiYuqi
