@@ -14,9 +14,9 @@ const help = require('./help')
 const spinner = ora('Please wait while creating the application...')
 
 const generateApplaction = ({ frameName }) => {
-  const options = {}
+  const api = {}
   // vue or react pass by init
-  options.frameName = frameName
+  api.frameName = frameName
 
   if (!['vue', 'react'].includes(frameName)) { 
     console.log(chalk.yellow('Only support create vue and react project.'))
@@ -31,32 +31,32 @@ const generateApplaction = ({ frameName }) => {
 
   const task = async () => {
     // check remote new version
-    await update(options)
+    await update(api)
 
     // get user config
-    await app(options)
+    await app(api)
 
     // start
     spinner.start()
 
     // create project according user config
-    await create(options)
+    await create(api)
 
     // create unit test according user config
-    options.jest && await jest(options)
+    api.jest && await jest(api)
 
     // create eslint and prettier according user config
-    options.eslint && await eslint(options)
+    api.eslint && await eslint(api)
 
     // create package.json according user config
-    await packageJson(options)
+    await packageJson(api)
 
     // create webpack config according user config
-    await webpackConfig(options)
+    await webpackConfig(api)
 
     spinner.succeed()
 
-    await help(options)
+    await help(api)
 
     spinner.stop()
 

@@ -1,7 +1,7 @@
 const chalk = require('chalk')
 
-module.exports = async (options) => {
-  const { jest, eslint } = options
+module.exports = async (api) => {
+  const { jest, eslint } = api
   const outPutCliLog = {
     install: chalk`Run {green npm install} to install dependencies!`,
     dev: chalk`Run {green npm run dev} to start local server!`,
@@ -10,8 +10,9 @@ module.exports = async (options) => {
     eslint: chalk`Run {green npm run fix} to format your code!`,
     prettier: chalk`Run {green npm run prettier} to prettier your code!`
   }
-  console.log(
-    chalk`
+  console.log(`
+      Run ${chalk.green(`cd ${api.appName}`)}
+
       ${outPutCliLog.install}
 
       ${outPutCliLog.dev}

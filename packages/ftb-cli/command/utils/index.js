@@ -34,7 +34,7 @@ const downloadLatestRepo = async (gitRepo, cachePath) => {
 
 /**
  * Get remote template version
- * @param {Object} options 
+ * @param {String} frameName 
  */
 const getRemoteVersion = (frameName) => {
   const requestUrl = frameName === 'react' ? GITHUB_REACT_URL : GITHUB_VUE_URL
@@ -70,12 +70,12 @@ const compareVersion = async ({ frameName }) => {
  * render handlebars
  * @param {String} template 
  * @param {String} file 
- * @param {Optional} options 
+ * @param {Optional} api 
  */
-const renderTemplate = (template, file, options) => {
+const renderTemplate = (template, file, api) => {
   if (fs.existsSync(template)) {
     const templateContent = fs.readFileSync(template).toString()
-    const result = handlebars.compile(templateContent)(options)
+    const result = handlebars.compile(templateContent)(api)
     fs.writeFileSync(file, result)
   }
 }
@@ -83,10 +83,10 @@ const renderTemplate = (template, file, options) => {
 /**
  * renderRule 替换规则
  * fileLists 文件模板位置
- * options 数据
+ * api 数据
  * @param {*} param
  */
-const writeTemplateToProject = ({ renderRule, fileLists, options }) => {
+const writeTemplateToProject = ({ renderRule, fileLists, api }) => {
   return new Promise((resolve, reject) => {
     if (!fileLists) {
       reject(false)
@@ -96,7 +96,7 @@ const writeTemplateToProject = ({ renderRule, fileLists, options }) => {
       const rule = new RegExp(renderRule)
       const packageTpl = resolveApp(`../../${file}`)
       const writeToFilePath = file.replace(rule, '').replace(/\.hbs$/, '')
-      renderTemplate(packageTpl, `${process.cwd()}/${options.appName}/${writeToFilePath}`, options)
+      renderTemplate(packageTpl, `${process.cwd()}/${api.appName}/${writeToFilePath}`, api)
     }
     resolve()
   })

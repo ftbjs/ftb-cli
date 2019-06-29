@@ -3,7 +3,7 @@ const chalk = require('chalk')
 const inquirer = require('inquirer')
 const shelljs = require('shelljs')
 
-const app = (options) => {
+const app = (api) => {
   return new Promise((resolve, reject) => {
     inquirer
     .prompt([
@@ -56,11 +56,11 @@ const app = (options) => {
     ])
     .then(answer => {
       // ignore space
-      options.appName = answer.appName.split(/\s/)[0]
-      options.scss = answer.cssType === 'scss'
-      options.less = answer.cssType === 'less'
-      options.jest = answer.jest === 'Yes'
-      options.eslint = answer.eslint === 'Yes'
+      api.appName = answer.appName.split(/\s/)[0]
+      api.scss = answer.cssType === 'scss'
+      api.less = answer.cssType === 'less'
+      api.jest = answer.jest === 'Yes'
+      api.eslint = answer.eslint === 'Yes'
       resolve()
     })
   })

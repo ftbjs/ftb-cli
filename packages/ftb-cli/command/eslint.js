@@ -1,6 +1,6 @@
 const { writeTemplateToProject } = require('./utils/index')
 
-const eslint = (options) => {
+const eslint = (api) => {
   const fileLists = [
     'templates/eslint/.eslintignore.hbs',
     'templates/eslint/.eslintrc.js.hbs',
@@ -12,7 +12,7 @@ const eslint = (options) => {
     writeTemplateToProject({
       renderRule: '^templates\/eslint\/',
       fileLists,
-      options
+      api
     }).then(() => {
       resolve()
     }).catch((e) => {

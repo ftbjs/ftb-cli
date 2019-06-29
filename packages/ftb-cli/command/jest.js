@@ -1,8 +1,8 @@
 const fs = require('fs-extra')
 const { writeTemplateToProject, resolveApp } = require('./utils/index')
 
-const jest = (options) => {
-  const { appName } = options
+const jest = (api) => {
+  const { appName } = api
   const jestTestFolder = resolveApp('../../templates/jest/__test__')
 
   const fileLists = [
@@ -15,7 +15,7 @@ const jest = (options) => {
     writeTemplateToProject({
       renderRule: '^templates\/jest\/',
       fileLists,
-      options
+      api
     }).then(() => {
       // copy test folder to src
       fs.copySync(jestTestFolder, `${process.cwd()}/${appName}/src/__test__`)

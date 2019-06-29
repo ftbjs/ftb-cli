@@ -1,7 +1,7 @@
 const { writeTemplateToProject } = require('./utils/index')
 
-const packageJson = (options) => {
-  const { frameName } = options
+const packageJson = (api) => {
+  const { frameName } = api
   const fileLists = [
     `templates/package/${frameName}.package.json.hbs`
   ]
@@ -10,7 +10,7 @@ const packageJson = (options) => {
     writeTemplateToProject({
       renderRule: `^templates\/package\/${frameName}\.`,
       fileLists,
-      options
+      api
     }).then(() => {
       resolve()
     }).catch((e) => {

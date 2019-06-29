@@ -1,6 +1,6 @@
 const { writeTemplateToProject } = require('./utils/index')
 
-const webpackConfig = (options) => {
+const webpackConfig = (api) => {
   const fileLists = [
     'templates/build/utils.js.hbs',
     'templates/build/webpack.base.config.js.hbs',
@@ -12,7 +12,7 @@ const webpackConfig = (options) => {
     writeTemplateToProject({
       renderRule: '^templates\/',
       fileLists,
-      options
+      api
     }).then(() => {
       resolve()
     }).catch((e) => {
