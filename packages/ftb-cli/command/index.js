@@ -59,6 +59,8 @@ const generateApplaction = ({ frameName }) => {
     await help(options)
 
     spinner.stop()
+
+    process.exit()
   }
 
   task()

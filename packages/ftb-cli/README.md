@@ -35,9 +35,9 @@ npm install ftb-cli -g
 ```js
 git clone [project]
 
-npm run install
+cd project
 
-cd packages/ftb-cli
+npm install
 
 npm link
 
