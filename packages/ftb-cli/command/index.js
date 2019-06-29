@@ -5,12 +5,12 @@ const chalk = require('chalk')
 const renderPackageJson = require('ftb-cli-plugin-package')
 const renderJest = require('ftb-cli-plugin-jest')
 const renderEslint = require('ftb-cli-plugin-eslint')
+const renderWebpack = require('ftb-cli-plugin-build')
 
 // tasks
 const update = require('./update')
 const app = require('./app')
 const create = require('./create')
-const webpackConfig = require('./webpack')
 const help = require('./help')
 
 // combine to api
@@ -59,7 +59,7 @@ const generateApplaction = ({ frameName }) => {
     await renderPackageJson(api)
 
     // create webpack config according user config
-    await webpackConfig(api)
+    await renderWebpack(api)
 
     spinner.succeed()
 
