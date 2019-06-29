@@ -1,0 +1,11 @@
+{
+  "name": "ftb-cli-plugin-eslint",
+  "version": "1.0.0",
+  "description": "A tool for create eslint for ftb-cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "biyuqiwan@163.com",
+  "license": "MIT"
+}

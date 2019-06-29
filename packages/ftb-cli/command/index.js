@@ -4,12 +4,12 @@ const chalk = require('chalk')
 // ftb cli plugin
 const renderPackageJson = require('ftb-cli-plugin-package')
 const renderJest = require('ftb-cli-plugin-jest')
+const renderEslint = require('ftb-cli-plugin-eslint')
 
 // tasks
 const update = require('./update')
 const app = require('./app')
 const create = require('./create')
-const eslint = require('./eslint')
 const webpackConfig = require('./webpack')
 const help = require('./help')
 
@@ -53,7 +53,7 @@ const generateApplaction = ({ frameName }) => {
     api.jest && await renderJest(api)
 
     // create eslint and prettier according user config
-    api.eslint && await eslint(api)
+    api.eslint && await renderEslint(api)
 
     // create package.json according user config
     await renderPackageJson(api)
