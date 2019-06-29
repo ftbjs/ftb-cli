@@ -5,16 +5,20 @@ const chalk = require('chalk')
 const update = require('./update')
 const app = require('./app')
 const create = require('./create')
-const packageJson = require('./package')
+const renderPackageJson = require('ftb-cli-plugin-package')
 const jest = require('./jest')
 const eslint = require('./eslint')
 const webpackConfig = require('./webpack')
 const help = require('./help')
 
+// combine to api
+const { render } = require('./utils/GeneratorAPI')
+
 const spinner = ora('Please wait while creating the application...')
 
 const generateApplaction = ({ frameName }) => {
   const api = {}
+  api.render = render
   // vue or react pass by init
   api.frameName = frameName
 
@@ -49,7 +53,7 @@ const generateApplaction = ({ frameName }) => {
     api.eslint && await eslint(api)
 
     // create package.json according user config
-    await packageJson(api)
+    await renderPackageJson(api)
 
     // create webpack config according user config
     await webpackConfig(api)
