@@ -1,6 +1,6 @@
 const fs = require('fs-extra')
 const { downloadLatestRepo, compareVersion, resolveApp } = require('./utils')
-const { ensureDir } = require('./utils/file')
+const ensureDirAsync = require('./utils/ensureDirAsync')
 
 const create = async (options) => {
   const { appName, frameName } = options
@@ -14,7 +14,7 @@ const create = async (options) => {
     downStatus = await downloadLatestRepo('github:ftb-family/ftb-cli#master', resolveApp(cacheBase))
   }
 
-  await ensureDir(appName)
+  await ensureDirAsync(appName)
   
   if (!downStatus) {
     fs.copySync(currentTemplateDir, `${process.cwd()}/${appName}`)
