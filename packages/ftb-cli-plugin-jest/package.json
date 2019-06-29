@@ -1,7 +1,7 @@
 {
   "name": "ftb-cli-plugin-jest",
   "version": "1.0.0",
-  "description": "A tool for create package.json for ftb-cli",
+  "description": "A tool for create unit test for ftb-cli",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
