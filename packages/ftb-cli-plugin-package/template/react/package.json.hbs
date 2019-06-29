@@ -1,0 +1,87 @@
+{
+  "name": "{{appName}}",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    {{#if eslint}}
+    "fix": "eslint --fix 'src/**/*.js'",
+    "prettier": "prettier --write 'src/**/*.js'",
+    {{/if}}
+    {{#if jest}}
+    "test": "jest",
+    {{/if}}
+    "dev": "webpack-dev-server --config build/webpack.dev.config",
+    "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.config"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.4.4",
+    "@babel/plugin-transform-react-jsx": "^7.3.0",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "autoprefixer": "^9.6.0",
+    {{#if eslint}}
+    "babel-eslint": "^10.0.2",
+    {{/if}}
+    {{#if jest}}
+    "babel-jest": "^24.8.0",
+    {{/if}}
+    "babel-loader": "^8.0.6",
+    "chalk": "^2.4.2",
+    "copy-webpack-plugin": "^5.0.3",
+    "cross-env": "^5.2.0",
+    "css-loader": "^2.1.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    {{#if eslint}}
+    "eslint": "^6.0.0",
+    "eslint-config-prettier": "^5.0.0",
+    "eslint-friendly-formatter": "^4.0.1",
+    "eslint-loader": "^2.1.2",
+    "eslint-plugin-prettier": "^3.1.0",
+    {{/if}}
+    "file-loader": "^4.0.0",
+    "fs-extra": "^8.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    {{#if less}}
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
+    {{/if}}
+    {{#if jest}}
+    "jest": "^24.8.0",
+    {{/if}}
+    "mini-css-extract-plugin": "^0.7.0",
+    {{#if scss}}
+    "node-sass": "^4.12.0",
+    {{/if}}
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "portfinder": "^1.0.20",
+    "postcss-loader": "^3.0.0",
+    {{#if eslint}}
+    "prettier": "^1.18.2",
+    {{/if}}
+    {{#if scss}}
+    "sass-loader": "^7.1.0",
+    {{/if}}
+    "style-loader": "^0.23.1",
+    "uglifyjs-webpack-plugin": "^2.1.3",
+    "url-loader": "^2.0.0",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.3",
+    "webpack-dev-server": "^3.7.0",
+    "webpack-merge": "^4.2.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "Firefox ESR",
+    "last 2 versions",
+    "ie >= 9"
+  ]
+}
