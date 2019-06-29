@@ -2,9 +2,9 @@ const fs = require('fs-extra')
 const { downloadLatestRepo, compareVersion, resolveApp } = require('./utils')
 const ensureDirAsync = require('./utils/ensureDirAsync')
 
-const create = async (options) => {
-  const { appName, frameName } = options
-  const isUpdate = await compareVersion(options)
+const create = async (api) => {
+  const { appName, frameName } = api
+  const isUpdate = await compareVersion(api)
   const cacheBase = '../../cache'
   const cacheTemplateDir = resolveApp(`${cacheBase}/templates/${frameName}`)
   const currentTemplateDir = resolveApp(`../../templates/${frameName}`)
@@ -21,6 +21,9 @@ const create = async (options) => {
   } else {
     fs.copySync(cacheTemplateDir, `${process.cwd()}/${appName}`)
   }
+
+  // Bug
+  // if use select less, our file not render correct right file
 }
 
 module.exports = create
