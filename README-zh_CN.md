@@ -1,4 +1,4 @@
-<h1 align="center">Ftb CLI 👋</h1>
+<h1 align="center">Ftb Cli 👋</h1>
 <p align="center">
   <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href=" ">
@@ -12,47 +12,47 @@
   </a>
 </p>
 
-<h4>Not released yet 😂😝😂. Focus on create vue template</h4>
+<h6>尚未发布 😂😝😂. 正在开发基于vue的模板</h6>
 
-> A cli tool for create vue and react application.
+> 一个快速创建vue和react项目的工具.
 
-### 🏠 [Homepage](https://github.com/ftb-family/ftb-cli#readme)
+[English](./README.md) | 简体中文
 
-## Install
+### 🏠 [首页](https://github.com/ftb-family/ftb-cli#readme)
+
+## 安装
 
 ```sh
 npm install ftb-cli -g
 ```
 
-## Usage
+## 使用
 
 ```sh
  ftb init [name] // vue or react
 ```
-> Currently, React cli is ready, Vue will supporting later.
 
-## Run in local
-```js
+## 本地开发调试
+```js 
 git clone [project]
 
-cd project
+npm run install
 
-npm install
+cd packages/ftb-cli
 
 npm link
 
 ftb init react
 ```
 
-## Author
+## 作者
 
 👤 **biyuqiwan@163.com**
 
 * Github: [@ BiYuqi](https://github.com/BiYuqi )
 
-## 🤝 Contributing
-
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/ftb-family/ftb-cli/issues).
+## 🤝 贡献
+欢迎贡献代码，提交issue和PR!<br />[issues page](https://github.com/ftb-family/ftb-cli/issues). 
 
 
 ## 📝 License

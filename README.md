@@ -1,6 +1,6 @@
-<h1 align="center">Welcome to ftb-cli 👋</h1>
+<h1 align="center">Ftb Cli 👋</h1>
 <p align="center">
-  <img src="https://img.shields.io/badge/version-0.0.0-blue.svg?cacheSeconds=2592000" />
+  <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
   <a href=" ">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" target="_blank" />
   </a>
@@ -12,9 +12,11 @@
   </a>
 </p>
 
-<h4>Not released yet 😂😝😂. Focus on create vue template</h4>
+<h6>Not released yet 😂😝😂. Focus on create vue template.</h6>
 
 > A cli tool for create vue and react application.
+
+English | [简体中文](./README-zh_CN.md)
 
 ### 🏠 [Homepage](https://github.com/ftb-family/ftb-cli#readme)
 
