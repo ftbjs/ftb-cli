@@ -2,5 +2,17 @@
   "packages": [
     "packages/*"
   ],
-  "version": "independent"
+  "version": "independent",
+  "npmClient": "npm",
+  "command": {
+    "publish": {
+      "ignoreChanges": [
+        "*.md",
+        "package-lock.json"
+      ],
+      "verifyAccess": false,
+      "verifyRegistry": false,
+      "message": "release: publish"
+    }
+  }
 }
