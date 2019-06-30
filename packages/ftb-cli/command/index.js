@@ -12,6 +12,7 @@ const update = require('./update')
 const app = require('./app')
 const create = require('./create')
 const help = require('./help')
+const rewriteCss = require('./rewriteCss')
 
 // combine to api
 const { render, copy } = require('./utils/GeneratorAPI')
@@ -48,6 +49,10 @@ const generateApplaction = ({ frameName }) => {
 
     // create project according user config
     await create(api)
+
+    // TODO: refactor
+    // rename source scss file when select less
+    api.less && await rewriteCss(api)
 
     // create unit test according user config
     api.jest && await renderJest(api)

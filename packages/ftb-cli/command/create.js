@@ -21,9 +21,6 @@ const create = async (api) => {
   } else {
     fs.copySync(cacheTemplateDir, `${process.cwd()}/${appName}`)
   }
-
-  // Bug
-  // if use select less, our file not render correct right file
 }
 
 module.exports = create
