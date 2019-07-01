@@ -34,9 +34,11 @@ npm install ftb-cli -g
 
 ## 本地开发调试
 ```js 
-git clone [project]
+git clone https://github.com/ftb-family/ftb-cli.git
 
-npm run install
+cd ftb-cli
+
+npm install
 
 cd packages/ftb-cli
 

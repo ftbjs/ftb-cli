@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "clean": "lerna clean",
-    "install": "lerna bootstrap",
+    "postinstall": "lerna bootstrap",
     "version": "lerna version --conventional-commits --yes",
     "publish": "lerna publish from-git"
   },
