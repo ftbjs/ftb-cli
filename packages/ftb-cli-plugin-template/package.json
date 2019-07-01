@@ -1,0 +1,14 @@
+{
+  "name": "ftb-cli-plugin-template",
+  "version": "1.0.0",
+  "description": "A tool for create different template for ftb cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "biyuqiwan@163.com",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^8.0.1"
+  }
+}
