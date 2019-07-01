@@ -16,6 +16,7 @@ const rewriteCss = require('./rewriteCss')
 
 // combine to api
 const { render, copy } = require('./utils/GeneratorAPI')
+const ftbCliVersion = require('../package.json').version
 
 const spinner = ora('Please wait while creating the application...')
 
@@ -23,6 +24,7 @@ const generateApplaction = ({ frameName }) => {
   const api = {}
   api.render = render
   api.copy = copy
+  api.version = ftbCliVersion
   // vue or react pass by init
   api.frameName = frameName
 
