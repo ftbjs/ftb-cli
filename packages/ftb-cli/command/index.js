@@ -49,6 +49,7 @@ const generateApplaction = ({ frameName }) => {
     // start
     spinner.start()
 
+    // TODO: refactor > use ftb-cli-plugin-template
     // create project according user config
     await create(api)
 

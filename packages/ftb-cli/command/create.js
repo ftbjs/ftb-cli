@@ -5,7 +5,7 @@ const ensureDirAsync = require('./utils/ensureDirAsync')
 const create = async (api) => {
   const { appName, frameName } = api
   const isUpdate = await compareVersion(api)
-  const cacheBase = '../../cache'
+  const cacheBase = '../../cache/packages/ftb-cli'
   const cacheTemplateDir = resolveApp(`${cacheBase}/templates/${frameName}`)
   const currentTemplateDir = resolveApp(`../../templates/${frameName}`)
 
