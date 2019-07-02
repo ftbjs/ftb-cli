@@ -30,4 +30,15 @@ module.exports = async (api) => {
       ${outPutCliLog.prettier}
     `)
   }
+  if (!api.update) {return}
+  console.log(`
+      ${chalk.yellow('---------------------------------------------------------')}
+
+      Found new version: ${chalk.green(`${api.remoteVersion}`)}
+
+      Please run ${chalk.green('npm install ftb-cli -g')} to update your local version.
+
+      ${chalk.yellow('---------------------------------------------------------')}
+    `
+  )
 }

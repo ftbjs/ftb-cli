@@ -6,25 +6,26 @@ const renderPackageJson = require('ftb-cli-plugin-package')
 const renderJest = require('ftb-cli-plugin-jest')
 const renderEslint = require('ftb-cli-plugin-eslint')
 const renderWebpack = require('ftb-cli-plugin-build')
+const renderTemplate = require('ftb-cli-plugin-template')
 
 // tasks
 const update = require('./update')
 const app = require('./app')
-const create = require('./create')
 const help = require('./help')
-const rewriteCss = require('./rewriteCss')
 
 // combine to api
-const { render, copy } = require('./utils/GeneratorAPI')
+const { render, copy, download } = require('./utils/GeneratorAPI')
 const ftbCliVersion = require('../package.json').version
 
-const spinner = ora('Please wait while creating the application...')
+const spinner = ora('Please wait while init the application...')
+const spinnerFeatchUpdate = ora('Checking remote version...')
 
 const generateApplaction = ({ frameName }) => {
   const api = {}
   api.render = render
   api.copy = copy
   api.version = ftbCliVersion
+  api.download = download
   // vue or react pass by init
   api.frameName = frameName
 
@@ -40,8 +41,11 @@ const generateApplaction = ({ frameName }) => {
   }
 
   const task = async () => {
+    spinnerFeatchUpdate.start()
     // check remote new version
     await update(api)
+
+    spinnerFeatchUpdate.stop()
 
     // get user config
     await app(api)
@@ -49,13 +53,8 @@ const generateApplaction = ({ frameName }) => {
     // start
     spinner.start()
 
-    // TODO: refactor > use ftb-cli-plugin-template
     // create project according user config
-    await create(api)
-
-    // TODO: refactor
-    // rename source scss file when select less
-    api.less && await rewriteCss(api)
+    await renderTemplate(api)
 
     // create unit test according user config
     api.jest && await renderJest(api)

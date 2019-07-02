@@ -1,5 +1,6 @@
 const fs = require('fs-extra')
 const renderTemplate = require('./renderTemplate')
+const { downloadLatestRepo } = require('./index')
 
 /**
  * @author BiYuqi
@@ -28,7 +29,10 @@ const copy = ({ source, target, api }) => {
   })
 }
 
+const download = downloadLatestRepo
+
 module.exports = {
   render,
-  copy
+  copy,
+  download
 }
