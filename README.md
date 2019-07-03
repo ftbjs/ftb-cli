@@ -12,7 +12,7 @@
   </a>
 </p>
 
-<h6>Not released yet 😂😝😂. Focus on create vue template.</h6>
+<h6>Released react 😂😝😂. Focus on create vue template.</h6>
 
 > A cli tool for create vue and react application.
 
@@ -31,7 +31,7 @@ npm install ftb-cli -g
 ```sh
  ftb init [name] // vue or react
 ```
-> Currently, React cli is ready, Vue will supporting later.
+> Currently, React cli is released, Vue will supporting later.
 
 ## Run in local
 ```js

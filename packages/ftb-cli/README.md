@@ -12,7 +12,7 @@
   </a>
 </p>
 
-<h6>Not released yet 😂😝😂. Focus on create vue template.</h6>
+<h6>Released react 😂😝😂. Focus on create vue template.</h6>
 
 > A cli tool for create vue and react application.
 
