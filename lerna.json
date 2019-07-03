@@ -12,7 +12,7 @@
       ],
       "verifyAccess": false,
       "verifyRegistry": false,
-      "message": "release: publish"
+      "message": "build: release new version"
     }
   }
 }
