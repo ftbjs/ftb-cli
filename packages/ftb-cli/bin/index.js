@@ -16,6 +16,15 @@ program
   })
 
 program
+  .command('add [name]')
+  .description('Support create project publish to npm')
+  .action((name, other) => {
+    console.log(chalk.yellow('Only support react project now.'))
+    console.log(chalk.yellow('Will support create npm packge later.'))
+    console.log(chalk.green('You can join us: https://github.com/ftb-family/ftb-cli'))
+  })
+
+program
   .command('*')
   .description('A wrong operation, Please see above all command.')
   .action((name, other) => {
