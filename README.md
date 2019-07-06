@@ -1,6 +1,6 @@
 <h1 align="center">Ftb Cli 👋</h1>
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <img src="https://img.shields.io/badge/version-1.1.0-blue.svg?cacheSeconds=2592000" />
   <a href=" ">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" target="_blank" />
   </a>
@@ -12,9 +12,10 @@
   </a>
 </p>
 
-<h6>Released react 😂😝😂. Focus on create vue template.</h6>
+<h6 align="center">Released react 😂😝😂. Focus on create vue template.</h6>
 
-> A cli tool for create vue and react application.
+## Overview
+This project is a command line tool that supports creating `Vue` and `React` projects, You can select testing, eslint by yourself. At the same time, the command line also supports creating npm packages, pure js libraries, vue plugins, react plugins, and include development environments, build environments. support for publishing to npm.
 
 English | [简体中文](./README-zh_CN.md)
 
@@ -28,10 +29,17 @@ npm install ftb-cli -g
 
 ## Usage
 
+Create vue and react project:
 ```sh
- ftb init [name] // vue or react
+# name ~ [vue, react]
+ftb init [name]
 ```
-> Currently, React cli is released, Vue will supporting later.
+
+Create npm package:
+```sh
+# name ~ [js, vue, react]
+ftb add [name]
+```
 
 ## Run in local
 ```js
@@ -58,6 +66,8 @@ ftb init react
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/ftb-family/ftb-cli/issues).
 
+## ChangeLog
+[ChangeLog](./packages/ftb-cli/CHANGELOG.md)
 
 ## 📝 License
 

@@ -1,6 +1,6 @@
 <h1 align="center">Ftb Cli 👋</h1>
 <p align="center">
-  <img src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
+  <img src="https://img.shields.io/badge/version-1.1.0-blue.svg?cacheSeconds=2592000" />
   <a href=" ">
     <img alt="Documentation" src="https://img.shields.io/badge/documentation-yes-brightgreen.svg" target="_blank" />
   </a>
@@ -12,9 +12,10 @@
   </a>
 </p>
 
-<h6>React 版本已经发布 😂😝😂. 正在开发基于vue的模板</h6>
+<h6 align="center">React 版本已经发布 😂😝😂. 正在开发基于vue的模板</h6>
 
-> 一个快速创建vue和react项目的工具.
+## 前言
+本项目是一个命令行工具，支持创建`vue`和`react`的项目，是否使用单元测试, eslint取决于你; 同时该命令行也支持创建npm package, 纯js库, vue插件, react插件,完备的开发环境，支持发布到npm.
 
 [English](./README.md) | 简体中文
 
@@ -28,8 +29,16 @@ npm install ftb-cli -g
 
 ## 使用
 
+创建vue和react项目:
 ```sh
- ftb init [name] // vue or react
+# name ~ [vue, react]
+ftb init [name]
+```
+
+创建npm package项目:
+```sh
+# name ~ [js, vue, react]
+ftb add [name]
 ```
 
 ## 本地开发调试
@@ -56,6 +65,8 @@ ftb init react
 ## 🤝 贡献
 欢迎贡献代码，提交issue和PR!<br />[issues page](https://github.com/ftb-family/ftb-cli/issues). 
 
+## 更新日志
+[更新日志](./packages/ftb-cli/CHANGELOG.md)
 
 ## 📝 License
 
