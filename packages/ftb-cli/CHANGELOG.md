@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/ftb-family/ftb-cli/compare/ftb-cli@1.1.0...ftb-cli@1.2.0) (2019-07-06)
+
+
+### Features
+
+* support input 'ftb add [name]' command ([4c12459](https://github.com/ftb-family/ftb-cli/commit/4c12459))
+
+
+
+
+
 # 1.1.0 (2019-07-03)
 
 

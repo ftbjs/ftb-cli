@@ -1,6 +1,6 @@
 {
   "name": "ftb-cli",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "A tool for run vue project, react project. also support run single file of them.",
   "main": "index.js",
   "bin": {
