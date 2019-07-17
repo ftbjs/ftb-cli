@@ -4,8 +4,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {
   isProd,
   resolve,
-  webpackEslintConfig,
-  webpackOutConfig
+  webpackOutConfig,
+  webpackEslintConfig
 } = require('./utils')
 
 const app = { 
@@ -73,7 +73,7 @@ const app = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '../index.html')
+      template: path.resolve(__dirname, '../public/index.html')
     })
   ]
 }
