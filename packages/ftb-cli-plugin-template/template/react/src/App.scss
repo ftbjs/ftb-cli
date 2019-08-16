@@ -4,10 +4,23 @@
   margin: 0 auto;
 
   img {
-    border-radius: 6px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    animation: 6s ftb infinite linear; 
+  }
+
+  @keyframes ftb {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
   }
 
   .ftb-cli_title {
-    font-size: 20px;
+    font-size: 26px;
+    color: #5a5a5a;
   }
 }
