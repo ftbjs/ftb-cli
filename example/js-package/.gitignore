@@ -1,0 +1,15 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+dist
+node_modules
+.DS_store
+package-lock.json
+.vscode
+.idea
+cache
