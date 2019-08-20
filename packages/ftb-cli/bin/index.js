@@ -19,9 +19,9 @@ program
   .command('add [name]')
   .description('Support create project publish to npm')
   .action((name, other) => {
-    console.log(chalk.yellow('Only support react project now.'))
-    console.log(chalk.yellow('Will support create npm packge later.'))
-    console.log(chalk.green('You can join us: https://github.com/ftb-family/ftb-cli'))
+    console.log(chalk.red('Only support create react project now'))
+    console.log(chalk.red('Will support create npm packge later.'))
+    console.log(chalk.greenBright('You can join us: https://github.com/ftb-family/ftb-cli'))
   })
 
 program
