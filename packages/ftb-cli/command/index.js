@@ -14,7 +14,7 @@ const app = require('./app')
 const help = require('./help')
 
 // combine to api
-const { render, copy, download } = require('./utils/GeneratorAPI')
+const { render, copy, download } = require('./utils/generatorAPI')
 const ftbCliVersion = require('../package.json').version
 
 const spinner = ora('Please wait while init the application...')
