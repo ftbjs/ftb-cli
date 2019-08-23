@@ -12,7 +12,7 @@ program
   .alias('i')
   .description('Support create a react or vue project')
   .action((name, other) => {
-    require('../command/index.js')({ frameName: name })
+    require('../command/project/index.js')({ frameName: name })
   })
 
 program

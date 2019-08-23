@@ -1,4 +1,4 @@
-const { getRemoteVersion } = require('./utils/index')
+const { getRemoteVersion } = require('../utils/index')
 
 const update = (api) => {
   return new Promise(async (resolve, reject) => {
