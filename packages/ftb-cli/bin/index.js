@@ -2,6 +2,7 @@
 
 const program = require('commander')
 const chalk = require('chalk')
+const { packageCommand } = require('../command/utils/helper')
 
 program
   .version(require('../package').version, '-v, --version')
@@ -19,9 +20,11 @@ program
   .command('add [name]')
   .description('Support create project publish to npm')
   .action((name, other) => {
-    console.log(chalk.red('Only support create react project now'))
-    console.log(chalk.red('Will support create npm packge later.'))
-    console.log(chalk.greenBright('You can join us: https://github.com/ftb-family/ftb-cli'))
+    if (!packageCommand.includes(name)) {
+      console.log(chalk.yellow(`Only support create one of [${packageCommand.join(', ')}] project.`))
+      return
+    }
+    require(`../command/package/${name}-index`)({ frameName: name })
   })
 
 program

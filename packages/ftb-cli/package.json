@@ -41,6 +41,7 @@
     "ftb-cli-plugin-jest": "^1.1.0",
     "ftb-cli-plugin-package": "^1.1.0",
     "ftb-cli-plugin-template": "^1.1.0",
+    "ftb-js-package": "^1.0.0",
     "handlebars": "^4.1.2",
     "inquirer": "^6.4.1",
     "is-online": "^8.2.0",
