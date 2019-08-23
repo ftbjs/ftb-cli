@@ -9,7 +9,7 @@ const renderWebpack = require('ftb-cli-plugin-build')
 const renderTemplate = require('ftb-cli-plugin-template')
 
 // tasks
-const update = require('./update')
+const update = require('../utils/update')
 const app = require('./app')
 const help = require('./help')
 
