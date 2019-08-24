@@ -10,6 +10,7 @@ const renderTemplate = require('ftb-cli-plugin-template')
 
 // tasks
 const update = require('../utils/update')
+// const cacheFtbSource = require('../utils/cacheFtbSource')
 const app = require('./app')
 const help = require('./help')
 
@@ -44,6 +45,9 @@ const generateApplaction = ({ frameName }) => {
     spinnerFeatchUpdate.start()
     // check remote new version
     await update(api)
+
+    // TODO add cache strategy
+    // await cacheFtbSource(api)
 
     spinnerFeatchUpdate.stop()
 

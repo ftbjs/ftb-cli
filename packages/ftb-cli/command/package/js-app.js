@@ -10,7 +10,7 @@ const app = (api) => {
     .prompt([
       {
         name: 'appName',
-        message: 'Please input the application name:',
+        message: 'Please input the project folder name:',
         validate: (appname) => {
           appname = appname.split(/\s/)
           const getAppName = appname[0]
@@ -29,7 +29,7 @@ const app = (api) => {
       },
       {
         name: 'packageName',
-        message: 'Please input your package name:',
+        message: 'Please input your package name: !important!',
         validate: (name) => {
           if (!npmPackageNameRule.test(name)) {
             return `

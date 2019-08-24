@@ -4,10 +4,9 @@ const shelljs = require('shelljs')
 const resolveApp = (src) => path.resolve(__dirname, src)
 
 module.exports = (api) => {
-  return new Promise((resolve, reject) => {
-    const templatePath = resolveApp(`../../example/js-package`)
-
-    fs.copySync(templatePath, `${process.cwd()}/${api.appName}`)
+  return new Promise(async (resolve, reject) => {
+    const rootTemplatePath = resolveApp('./js-package')
+    fs.copySync(rootTemplatePath, `${process.cwd()}/${api.appName}`)
 
     const fileLists = [
       path.resolve(__dirname, `./template/build/utils.js.hbs`),
@@ -45,6 +44,6 @@ module.exports = (api) => {
       api
     }).then(() => {
       resolve()
-    })
+    }).catch((e) => resolve(false))
   })
 }

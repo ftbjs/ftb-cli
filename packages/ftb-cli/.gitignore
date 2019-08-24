@@ -1,7 +1,8 @@
 dist
-node_modules
+/node_modules/
 .DS_store
 package-lock.json
+/ftb-cli-cache/
 .vscode
 .idea
 cache

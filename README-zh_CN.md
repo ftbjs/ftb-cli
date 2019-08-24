@@ -31,13 +31,13 @@ npm install ftb-cli -g
 
 创建vue和react项目:
 ```sh
-# name ~ [vue, react]
+# 只支持2种 vue, react
 ftb init [name]
 ```
 
 创建npm package项目:
 ```sh
-# name ~ [js, vue, react]
+# 只支持3种 js, vue, react
 ftb add [name]
 ```
 ## 已支持功能
@@ -51,7 +51,7 @@ ftb add js
 
 ## 开发中功能
 ```sh
-# not support now, will complete later
+# 暂未支持，正在开发s
 ftb init vue
 ftb add vue
 ftb add react

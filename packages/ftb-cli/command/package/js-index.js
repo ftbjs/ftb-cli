@@ -1,9 +1,9 @@
 const ora = require('ora')
-const chalk = require('chalk')
 const renderJsPackage = require('ftb-js-package')
 
 // tasks
 const update = require('../utils/update')
+// const cacheFtbSource = require('../utils/cacheFtbSource')
 
 // combine to api
 const { render, copy, download } = require('../utils/generatorAPI')
@@ -22,8 +22,12 @@ const generateApplaction = ({ frameName }) => {
 
   const task = async () => {
     spinnerFeatchUpdate.start()
+
     // check remote new version
     await update(api)
+
+    // TODO add cache strategy
+    // await cacheFtbSource(api)
 
     spinnerFeatchUpdate.stop()
 
