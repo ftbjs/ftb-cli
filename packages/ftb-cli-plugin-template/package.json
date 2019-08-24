@@ -1,6 +1,6 @@
 {
   "name": "ftb-cli-plugin-template",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A tool for create different template for ftb cli",
   "main": "index.js",
   "scripts": {
