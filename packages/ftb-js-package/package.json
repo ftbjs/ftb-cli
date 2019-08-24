@@ -1,7 +1,7 @@
 {
   "name": "ftb-js-package",
   "version": "1.1.3",
-  "description": "A tool for create eslint for ftb-cli",
+  "description": "A tool for create js npm package for ftb-cli",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
