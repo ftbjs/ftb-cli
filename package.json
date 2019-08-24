@@ -5,8 +5,7 @@
     "clean": "lerna clean",
     "postinstall": "lerna bootstrap",
     "version": "lerna version --conventional-commits --yes",
-    "publish": "lerna publish from-git",
-    "release": "npm run version & npm run pubish"
+    "publish": "lerna publish from-git"
   },
   "husky": {
     "hooks": {
