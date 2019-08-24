@@ -41,6 +41,23 @@ Create npm package:
 ftb add [name]
 ```
 
+## Support command
+```sh
+# create react project
+ftb init react
+
+# create js npm package template
+ftb add js
+```
+
+## Not Support command
+```sh
+# not support now, will complete later
+ftb init vue
+ftb add vue
+ftb add react
+```
+
 ## Run in local
 ```js
 git clone https://github.com/ftb-family/ftb-cli.git

@@ -24,6 +24,12 @@ program
       console.log(chalk.yellow(`Only support create one of [${packageCommand.join(', ')}] project.`))
       return
     }
+    
+    if (name === 'vue' || name === 'react') {
+      console.log(chalk.yellow(`Only support create js package, vue and react will be later`))
+      return
+    }
+
     require(`../command/package/${name}-index`)({ frameName: name })
   })
 

@@ -40,6 +40,22 @@ ftb init [name]
 # name ~ [js, vue, react]
 ftb add [name]
 ```
+## 已支持功能
+```sh
+# 创建react项目
+ftb init react
+
+# 创建javascript项目 发布至npm包
+ftb add js
+```
+
+## 开发中功能
+```sh
+# not support now, will complete later
+ftb init vue
+ftb add vue
+ftb add react
+```
 
 ## 本地开发调试
 ```js 
