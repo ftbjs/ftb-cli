@@ -50,23 +50,23 @@ const app = (api) => {
           'Yes',
           'No'
         ]
+      },
+      {
+        type: 'list',
+        name: 'eslint',
+        message: 'Do you want to add eslint and prettier to format your code?',
+        choices: [
+          'Yes',
+          'No'
+        ]
       }
-      // {
-      //   type: 'list',
-      //   name: 'eslint',
-      //   message: 'Do you want to add eslint and prettier to format your code?',
-      //   choices: [
-      //     'Yes',
-      //     'No'
-      //   ]
-      // }
     ])
     .then(answer => {
       // ignore space
       api.appName = answer.appName.split(/\s/)[0]
       api.packageName = upperCamelCase(answer.packageName)
       api.jest = answer.jest === 'Yes'
-      // api.eslint = answer.eslint === 'Yes'
+      api.eslint = answer.eslint === 'Yes'
       resolve()
     })
   })

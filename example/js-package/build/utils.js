@@ -6,7 +6,21 @@ const resolve = (dir) => {
 
 const isProd = process.env.NODE_ENV === 'production'
 
+/**
+ * set eslint
+ */
+const webpackEsLintConfig = () => ({
+  test: /\.js$/,
+  loader: 'eslint-loader',
+  enforce: 'pre',
+  include: resolve('../src'),
+  options: {
+    formatter: require('eslint-friendly-formatter')
+  }
+})
+
 module.exports = {
   resolve,
-  isProd
+  isProd,
+  webpackEsLintConfig
 }

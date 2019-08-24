@@ -1,4 +1,10 @@
-const { resolve, isProd } = require('./utils')
+const {
+  {{#if eslint}}
+  webpackEsLintConfig,
+  {{/if}}
+  resolve,
+  isProd
+} = require('./utils')
 
 module.exports = {
   entry: {
@@ -6,6 +12,9 @@ module.exports = {
   },
   module: {
     rules: [
+      {{#if eslint}}
+      webpackEsLintConfig(),
+      {{/if}}
       {
         test: /\.js$/,
         use: {

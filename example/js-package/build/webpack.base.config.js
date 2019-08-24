@@ -1,4 +1,8 @@
-const { resolve, isProd } = require('./utils')
+const {
+  webpackEsLintConfig,
+  resolve,
+  isProd
+} = require('./utils')
 
 module.exports = {
   entry: {
@@ -6,6 +10,7 @@ module.exports = {
   },
   module: {
     rules: [
+      webpackEsLintConfig(),
       {
         test: /\.js$/,
         use: {

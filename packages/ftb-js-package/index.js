@@ -30,6 +30,14 @@ module.exports = (api) => {
     } else {
       shelljs.rm('-rf', `${process.cwd()}/${api.appName}/test`)
     }
+
+    if ( !api.eslint ) {
+      shelljs.rm('-rf', `${process.cwd()}/${api.appName}/.eslintignore`)
+      shelljs.rm('-rf', `${process.cwd()}/${api.appName}/.eslintrc.js`)
+      shelljs.rm('-rf', `${process.cwd()}/${api.appName}/.prettierignore`)
+      shelljs.rm('-rf', `${process.cwd()}/${api.appName}/.prettierrc.js`)
+    }
+
     
     api.render({
       fileLists,
