@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.2](https://github.com/ftb-family/ftb-cli/compare/ftb-cli-plugin-template@1.2.0...ftb-cli-plugin-template@1.2.2) (2019-08-24)
+
+
+### Bug Fixes
+
+* fix cache strategy cause create project failed ([279391e](https://github.com/ftb-family/ftb-cli/commit/279391e))
+
+
+
+
+
 ## [1.2.1](https://github.com/ftb-family/ftb-cli/compare/ftb-cli-plugin-template@1.2.0...ftb-cli-plugin-template@1.2.1) (2019-08-24)
 
 
