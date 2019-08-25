@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.5](https://github.com/ftb-family/ftb-cli/compare/ftb-js-package@1.1.4...ftb-js-package@1.1.5) (2019-08-25)
+
+
+### Bug Fixes
+
+* fix js package can not be created success ([745b4fa](https://github.com/ftb-family/ftb-cli/commit/745b4fa))
+
+
+
+
+
 ## [1.1.4](https://github.com/ftb-family/ftb-cli/compare/ftb-js-package@1.1.0...ftb-js-package@1.1.4) (2019-08-24)
 
 
