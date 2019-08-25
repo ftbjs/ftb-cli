@@ -3,6 +3,7 @@ const renderJsPackage = require('ftb-js-package')
 
 // tasks
 const update = require('../utils/update')
+const appInquire = require('./js-app')
 // const cacheFtbSource = require('../utils/cacheFtbSource')
 
 // combine to api
@@ -13,7 +14,7 @@ const spinner = ora('Please wait while init the application...')
 const spinnerFeatchUpdate = ora('Checking remote version...')
 const spinnerFeatchDone = ora('Created success!!!')
 
-const generateApplaction = ({ frameName }) => {
+const generateApplaction = () => {
   const api = {}
   api.render = render
   api.copy = copy
@@ -32,7 +33,7 @@ const generateApplaction = ({ frameName }) => {
     spinnerFeatchUpdate.stop()
 
     // get user config
-    await require(`./js-app`)(api)
+    await appInquire(api)
 
     // start
     spinner.start()
