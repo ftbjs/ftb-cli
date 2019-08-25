@@ -14,12 +14,13 @@ const spinner = ora('Please wait while init the application...')
 const spinnerFeatchUpdate = ora('Checking remote version...')
 const spinnerFeatchDone = ora('Created success!!!')
 
-const generateApplaction = () => {
+const generateApplaction = ({ frameName }) => {
   const api = {}
   api.render = render
   api.copy = copy
   api.version = ftbCliVersion
   api.download = download
+  api.frameName = frameName
 
   const task = async () => {
     spinnerFeatchUpdate.start()

@@ -30,7 +30,7 @@ program
       return
     }
 
-    require(`../command/package/${name}-index`)()
+    require(`../command/package/${name}-index`)({ frameName: name })
   })
 
 program
