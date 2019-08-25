@@ -25,39 +25,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.3.3](https://github.com/ftb-family/ftb-cli/compare/ftb-cli@1.3.0...ftb-cli@1.3.3) (2019-08-24)
-
-
-### Bug Fixes
-
-* fix cache strategy cause create project failed ([279391e](https://github.com/ftb-family/ftb-cli/commit/279391e))
-
-
-
-
-
-## [1.3.2](https://github.com/ftb-family/ftb-cli/compare/ftb-cli@1.3.0...ftb-cli@1.3.2) (2019-08-24)
-
-
-### Bug Fixes
-
-* fix cache strategy cause create project failed ([279391e](https://github.com/ftb-family/ftb-cli/commit/279391e))
-
-
-
-
-
-## [1.3.1](https://github.com/ftb-family/ftb-cli/compare/ftb-cli@1.3.0...ftb-cli@1.3.1) (2019-08-24)
-
-
-### Bug Fixes
-
-* fix cache strategy cause create project failed ([279391e](https://github.com/ftb-family/ftb-cli/commit/279391e))
-
-
-
-
-
 # [1.3.0](https://github.com/ftb-family/ftb-cli/compare/ftb-cli@1.2.0...ftb-cli@1.3.0) (2019-08-24)
 
 

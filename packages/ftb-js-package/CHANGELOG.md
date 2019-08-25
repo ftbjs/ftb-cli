@@ -25,39 +25,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 
 
 
-## [1.1.3](https://github.com/ftb-family/ftb-cli/compare/ftb-js-package@1.1.0...ftb-js-package@1.1.3) (2019-08-24)
-
-
-### Bug Fixes
-
-* fix cache strategy cause create project failed ([279391e](https://github.com/ftb-family/ftb-cli/commit/279391e))
-
-
-
-
-
-## [1.1.2](https://github.com/ftb-family/ftb-cli/compare/ftb-js-package@1.1.0...ftb-js-package@1.1.2) (2019-08-24)
-
-
-### Bug Fixes
-
-* fix cache strategy cause create project failed ([279391e](https://github.com/ftb-family/ftb-cli/commit/279391e))
-
-
-
-
-
-## [1.1.1](https://github.com/ftb-family/ftb-cli/compare/ftb-js-package@1.1.0...ftb-js-package@1.1.1) (2019-08-24)
-
-
-### Bug Fixes
-
-* fix cache strategy cause create project failed ([279391e](https://github.com/ftb-family/ftb-cli/commit/279391e))
-
-
-
-
-
 # 1.1.0 (2019-08-24)
 
 
