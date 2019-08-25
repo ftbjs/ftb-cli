@@ -3,17 +3,17 @@ const fs = require('fs-extra')
 const shelljs = require('shelljs')
 const resolveApp = (src) => path.resolve(__dirname, src)
 
-module.exports = (api) => {
-  return new Promise(async (resolve, reject) => {
+module.exports = async (api) => {
+  return new Promise((resolve, reject) => {
     const rootTemplatePath = resolveApp('./js-package')
     fs.copySync(rootTemplatePath, `${process.cwd()}/${api.appName}`)
 
     const fileLists = [
-      path.resolve(__dirname, `./template/build/utils.js.hbs`),
-      path.resolve(__dirname, `./template/build/webpack.base.config.js.hbs`),
-      path.resolve(__dirname, `./template/build/webpack.dev.config.js.hbs`),
-      path.resolve(__dirname, `./template/build/webpack.prod.config.js.hbs`),
-      path.resolve(__dirname, `./template/package.json.hbs`)
+      resolveApp('./template/build/utils.js.hbs'),
+      resolveApp('./template/build/webpack.base.config.js.hbs'),
+      resolveApp('./template/build/webpack.dev.config.js.hbs'),
+      resolveApp('./template/build/webpack.prod.config.js.hbs'),
+      resolveApp('./template/package.json.hbs')
     ]
     const filePath = [
       'build/utils.js',
@@ -24,7 +24,7 @@ module.exports = (api) => {
     ]
 
     if ( api.jest ) {
-      fileLists.push(path.resolve(__dirname, `./template/test/index.test.js.hbs`))
+      fileLists.push(resolveApp('./template/test/index.test.js.hbs'))
       filePath.push('test/index.test.js')
     } else {
       shelljs.rm('-rf', `${process.cwd()}/${api.appName}/test`)

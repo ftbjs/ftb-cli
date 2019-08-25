@@ -4,7 +4,7 @@ const inquirer = require('inquirer')
 const shelljs = require('shelljs')
 const { npmPackageNameRule, upperCamelCase } = require('../utils/helper')
 
-const app = (api) => {
+const app = async (api) => {
   return new Promise((resolve, reject) => {
     inquirer
     .prompt([
