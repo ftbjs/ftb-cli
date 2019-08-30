@@ -25,8 +25,8 @@ program
       return
     }
     
-    if (name === 'vue' || name === 'react') {
-      console.log(chalk.yellow(`Only support create js package, vue and react will be later`))
+    if (name === 'vue') {
+      console.log(chalk.yellow(`Only support create js and react package, vue will be later`))
       return
     }
 
