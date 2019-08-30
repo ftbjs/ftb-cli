@@ -12,8 +12,8 @@
   </a>
 </p>
 
-<h6 align="center">Released react 😂😝😂. Focus on create vue template.</h6>
-
+<h6 align="center">Focus on create vue template.😂😝😂</h6>
+  
 ## Overview
 This project is a command line tool that supports creating `Vue` and `React` projects, You can select testing, eslint by yourself. At the same time, the command line also supports creating npm packages, pure js libraries, vue plugins, react plugins, and include development environments, build environments. support for publishing to npm.
 

@@ -12,7 +12,7 @@
   </a>
 </p>
 
-<h6 align="center">正在开发基于vue的模板😂😝😂Focus</h6>
+<h6 align="center">正在开发基于vue的模板😂😝😂</h6>
 
 ## 前言
 本项目是一个命令行工具，支持创建`vue`和`react`的项目，是否使用单元测试, eslint取决于你; 同时该命令行也支持创建npm package, 纯js库, vue插件, react插件,完备的开发环境，支持发布到npm.
