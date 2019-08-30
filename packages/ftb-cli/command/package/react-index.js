@@ -1,5 +1,5 @@
 const ora = require('ora')
-const renderJsPackage = require('ftb-js-package')
+const renderReactPackage = require('ftb-react-package')
 
 // tasks
 const update = require('../utils/update')
@@ -40,7 +40,7 @@ const generateApplaction = ({ frameName }) => {
     spinner.start()
 
     // create project according user config
-    await renderJsPackage(api)
+    await renderReactPackage(api)
 
     spinner.stop()
 

@@ -1,0 +1,15 @@
+{
+  "name": "ftb-react-package",
+  "version": "1.0.0",
+  "description": "A tool for create js npm package for ftb-cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "biyuqiwan@163.com",
+  "license": "MIT",
+  "dependencies": {
+    "fs-extra": "^8.1.0",
+    "shelljs": "^0.8.3"
+  }
+}

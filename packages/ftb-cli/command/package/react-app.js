@@ -48,8 +48,7 @@ const app = async (api) => {
         message: 'Do you want to add CSS preprocessor in your code?',
         choices: [
           'Scss',
-          'Less',
-          'No'
+          'Less'
         ]
       },
       {
@@ -79,7 +78,6 @@ const app = async (api) => {
       api.eslint = answer.eslint === 'Yes'
       api.scss = answer.css === 'Scss'
       api.less = answer.css === 'Less'
-      api.hasCss = answer.css === 'No'
       resolve()
     })
   })
