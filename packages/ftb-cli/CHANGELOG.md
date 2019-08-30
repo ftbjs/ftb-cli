@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.4.0](https://github.com/ftb-family/ftb-cli/compare/ftb-cli@1.3.5...ftb-cli@1.4.0) (2019-08-30)
+
+
+### Features
+
+* create react package module ([b01c6d5](https://github.com/ftb-family/ftb-cli/commit/b01c6d5))
+* support create react package ([68d9067](https://github.com/ftb-family/ftb-cli/commit/68d9067))
+
+
+
+
+
 ## [1.3.5](https://github.com/ftb-family/ftb-cli/compare/ftb-cli@1.3.4...ftb-cli@1.3.5) (2019-08-25)
 
 

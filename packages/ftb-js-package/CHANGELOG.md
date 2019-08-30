@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/ftb-family/ftb-cli/compare/ftb-js-package@1.1.5...ftb-js-package@1.2.0) (2019-08-30)
+
+
+### Features
+
+* support create react package ([68d9067](https://github.com/ftb-family/ftb-cli/commit/68d9067))
+
+
+
+
+
 ## [1.1.5](https://github.com/ftb-family/ftb-cli/compare/ftb-js-package@1.1.4...ftb-js-package@1.1.5) (2019-08-25)
 
 

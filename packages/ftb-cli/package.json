@@ -1,6 +1,6 @@
 {
   "name": "ftb-cli",
-  "version": "1.3.5",
+  "version": "1.4.0",
   "description": "A tool for run vue project, react project. also support run single file of them.",
   "main": "index.js",
   "bin": {
@@ -41,8 +41,8 @@
     "ftb-cli-plugin-jest": "^1.1.0",
     "ftb-cli-plugin-package": "^1.1.0",
     "ftb-cli-plugin-template": "^1.2.4",
-    "ftb-js-package": "^1.1.5",
-    "ftb-react-package": "^1.0.0",
+    "ftb-js-package": "^1.2.0",
+    "ftb-react-package": "^1.1.0",
     "handlebars": "^4.1.2",
     "inquirer": "^6.4.1",
     "is-online": "^8.2.0",
