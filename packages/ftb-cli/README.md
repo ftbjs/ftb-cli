@@ -48,6 +48,9 @@ ftb init react
 
 # create js npm package template
 ftb add js
+
+# create react npm package template
+ftb add react
 ```
 
 ## Not Support command
@@ -55,7 +58,6 @@ ftb add js
 # not support now, will complete later
 ftb init vue
 ftb add vue
-ftb add react
 ```
 
 ## Run in local
