@@ -1,4 +1,4 @@
-## Ftb-cli-package
+## ftb-js-package
 
 English | [简体中文](./README-zh_CN.md)
 
