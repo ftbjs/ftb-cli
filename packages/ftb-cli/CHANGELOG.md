@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.4.1](https://github.com/ftb-family/ftb-cli/compare/ftb-cli@1.4.0...ftb-cli@1.4.1) (2019-08-31)
+
+**Note:** Version bump only for package ftb-cli
+
+
+
+
+
 # [1.4.0](https://github.com/ftb-family/ftb-cli/compare/ftb-cli@1.3.5...ftb-cli@1.4.0) (2019-08-30)
 
 
