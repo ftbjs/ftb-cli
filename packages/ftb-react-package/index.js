@@ -6,6 +6,6 @@ module.exports = async (api) => {
   await createTaskInstance.createReact()
 
   if (api.less) {
-    rewriteCss(api)
+    await rewriteCss(api)
   }
 }
