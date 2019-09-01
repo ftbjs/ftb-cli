@@ -5,7 +5,9 @@
     "clean": "lerna clean",
     "postinstall": "lerna bootstrap",
     "version": "lerna version --conventional-commits --yes",
-    "publish": "lerna publish from-git"
+    "publish": "lerna publish from-git",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "husky": {
     "hooks": {
@@ -17,7 +19,8 @@
     "@commitlint/config-conventional": "^8.0.0",
     "husky": "^2.7.0",
     "lerna": "^3.15.0",
-    "lint-staged": "^8.2.1"
+    "lint-staged": "^8.2.1",
+    "vuepress": "^1.0.3"
   },
   "publishConfig": {
     "access": "public"
