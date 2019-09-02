@@ -1,5 +1,5 @@
 const chalk = require('chalk')
-const portfinder = require('portfinder')
+const webpackAutoFindPort = require('webpack-auto-find-port')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const merge = require('webpack-merge')
 const base = require('./webpack.base.config.js')
@@ -25,26 +25,9 @@ const webpackDevConfig = merge(base, {
 })
 
 // prevent the port conflict
-module.exports = async () => {
-  const oldPort = webpackDevConfig.devServer.port
-  portfinder.basePort = oldPort
-
-  portfinder.getPort({host:'127.0.0.1'} , (err, port) => {
-    if (err){
-      console.log(chalk.red(`No port can used. Please check your machine`))
-      return
-    }
-
-    if (port !== oldPort) {
-      console.log(chalk.yellow(`The port ${oldPort} is used. will open the server with new port. \n`))
-    }
-
-    const URI = 'http://127.0.0.1:' + port
-
-    webpackDevConfig.devServer.port = port
-
-    console.log(chalk.greenBright('Project is running at:', URI))
-  })
-
-  return webpackDevConfig
-}
+module.exports = webpackAutoFindPort({
+  config: webpackDevConfig,
+  logger: (port) => {
+    console.log(chalk.green(`Project is Runing at ${port}`))
+  }
+})
