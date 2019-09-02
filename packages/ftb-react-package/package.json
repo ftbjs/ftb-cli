@@ -1,6 +1,6 @@
 {
   "name": "ftb-react-package",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "description": "A tool for create js npm package for ftb-cli",
   "main": "index.js",
   "scripts": {
