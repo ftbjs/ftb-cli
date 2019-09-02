@@ -34,7 +34,7 @@ module.exports = async (api) => {
   console.log(`
       ${chalk.yellow('---------------------------------------------------------')}
 
-      Found new version: ${chalk.green(`${api.remoteVersion}`)}
+      Found new version: ${chalk.green(`${api.remoteVersion}`)}, current version: ${chalk.yellow(api.version)}
 
       Please run ${chalk.green('npm install ftb-cli -g')} to update your local version.
 
