@@ -25,7 +25,7 @@ const webpackDevConfig = merge(webpackBaseConfig, {
 
 module.exports = webpackAutoFindPort({
   config: webpackDevConfig,
-  logger: (port) => {
+  logger: port => {
     console.log(chalk.green(`Project is Running at ${port}`))
   }
 })
