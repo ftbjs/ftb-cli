@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.1.4](https://github.com/ftb-family/ftb-cli/compare/ftb-cli-plugin-build@1.1.3...ftb-cli-plugin-build@1.1.4) (2019-09-06)
+
+**Note:** Version bump only for package ftb-cli-plugin-build
+
+
+
+
+
 ## [1.1.3](https://github.com/ftb-family/ftb-cli/compare/ftb-cli-plugin-build@1.1.2...ftb-cli-plugin-build@1.1.3) (2019-09-02)
 
 **Note:** Version bump only for package ftb-cli-plugin-build

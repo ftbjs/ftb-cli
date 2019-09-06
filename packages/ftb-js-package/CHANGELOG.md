@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [1.2.3](https://github.com/ftb-family/ftb-cli/compare/ftb-js-package@1.2.2...ftb-js-package@1.2.3) (2019-09-06)
+
+**Note:** Version bump only for package ftb-js-package
+
+
+
+
+
 ## [1.2.2](https://github.com/ftb-family/ftb-cli/compare/ftb-js-package@1.2.1...ftb-js-package@1.2.2) (2019-09-02)
 
 **Note:** Version bump only for package ftb-js-package
