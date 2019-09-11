@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/ftbjs/ftb-cli/compare/ftb-js-package@1.2.3...ftb-js-package@1.3.0) (2019-09-11)
+
+
+### Features
+
+* add HRM for create js package ([e3ce7c4](https://github.com/ftbjs/ftb-cli/commit/e3ce7c4))
+
+
+
+
+
 ## [1.2.3](https://github.com/ftb-family/ftb-cli/compare/ftb-js-package@1.2.2...ftb-js-package@1.2.3) (2019-09-06)
 
 **Note:** Version bump only for package ftb-js-package
