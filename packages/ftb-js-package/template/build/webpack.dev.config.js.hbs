@@ -1,4 +1,5 @@
 const chalk = require('chalk')
+const webpack = require('webpack')
 const webpackAutoFindPort = require('webpack-auto-find-port')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const merge = require('webpack-merge')
@@ -18,6 +19,7 @@ const webpackDevConfig = merge(base, {
     port: 8899
   },
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       template: resolve('../public/index.html')
     })
