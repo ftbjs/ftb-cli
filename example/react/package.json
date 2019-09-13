@@ -7,7 +7,7 @@
     "fix": "eslint --fix 'src/**/*.js'",
     "prettier": "prettier --write 'src/**/*.js'",
     "test": "jest",
-    "dev": "webpack-dev-server --config build/webpack.dev.config",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.dev.config",
     "build": "cross-env NODE_ENV=production webpack --config build/webpack.prod.config"
   },
   "dependencies": {
