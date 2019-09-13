@@ -12,7 +12,7 @@ const renderTemplate = require('ftb-cli-plugin-template')
 const update = require('../utils/update')
 // const cacheFtbSource = require('../utils/cacheFtbSource')
 const app = require('./app')
-const help = require('./help')
+const help = require('../utils/help')
 
 // combine to api
 const { render, copy, download } = require('../utils/generatorAPI')

@@ -29,15 +29,10 @@ const app = async (api) => {
       },
       {
         name: 'packageName',
-        message: 'Please enter your package name:',
-        validate: (name) => {
+        message: 'Please input your package name:',
+        validate: name => {
           if (!npmPackageNameRule.test(name)) {
-            return `
-            we recommned below partten for npm package name:
-            ${chalk.green('ftb')}
-            ${chalk.green('ftb-cli')}
-            ${chalk.green('@ftb/ftb-cli')}
-            `
+            return `Invalid package name.`
           }
           return true
         }

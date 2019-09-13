@@ -4,6 +4,8 @@ const renderJsPackage = require('ftb-js-package')
 // tasks
 const update = require('../utils/update')
 const appInquire = require('./js-app')
+const help = require('../utils/help')
+
 // const cacheFtbSource = require('../utils/cacheFtbSource')
 
 // combine to api
@@ -43,6 +45,8 @@ const generateApplaction = ({ frameName }) => {
     await renderJsPackage(api)
 
     spinner.stop()
+
+    await help(api)
 
     spinnerFeatchDone.start()
     spinnerFeatchDone.succeed()
