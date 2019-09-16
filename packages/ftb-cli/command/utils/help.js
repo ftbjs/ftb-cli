@@ -5,12 +5,13 @@ module.exports = async (api) => {
   const outPutCliLog = {
     succ1: chalk`🎉 Successfully created project ${api.appName}.`,
     succ2: chalk`👉 Get started with the following commands: \n`,
-    install: chalk`🛠  {cyanBright npm install} to install dependencies! \n`,
-    dev: chalk`🚀 {cyanBright npm run dev} to start local server!`,
-    build: chalk`🚀 {cyanBright npm run build} to build project! \n`,
-    test: chalk`🤹 {cyanBright npm run test} to test your code! \n`,
-    eslint: chalk`🍭 {cyanBright npm run fix} to format your code!`,
-    prettier: chalk`🍭 {cyanBright npm run prettier} to prettier your code!`
+    install1: chalk`🛠  {cyanBright cd ${api.appName}}`,
+    install2: chalk`🛠  {cyanBright npm install} to install dependencies! \n`,
+    dev: chalk`🚀  {cyanBright npm run dev} to start local server!`,
+    build: chalk`🚀  {cyanBright npm run build} to build project! \n`,
+    test: chalk`🤹  {cyanBright npm run test} to test your code! \n`,
+    eslint: chalk`🍭  {cyanBright npm run fix} to format your code!`,
+    prettier: chalk`🍭  {cyanBright npm run prettier} to prettier your code!`
   }
 
   if (!jest) {
