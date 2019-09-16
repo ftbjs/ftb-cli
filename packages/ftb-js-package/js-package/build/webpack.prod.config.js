@@ -5,7 +5,7 @@ const base = require('./webpack.base.config.js')
 const { resolve } = require('./utils')
 
 module.exports = merge(base, {
-  mode: "production",
+  mode: 'production',
   output: {
     filename: 'ftb-library.min.js',
     path: resolve('../dist'),

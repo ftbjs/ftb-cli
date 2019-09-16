@@ -7,7 +7,7 @@ const base = require('./webpack.base.config.js')
 const { resolve } = require('./utils')
 
 const webpackDevConfig = merge(base, {
-  mode: "development",
+  mode: 'development',
   output: {
     filename: 'ftb-library.js',
     path: resolve('../dist')
